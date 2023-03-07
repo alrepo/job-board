@@ -1,0 +1,834 @@
+*,body
+{
+    font-family: Tajawal,sans-serif;
+}
+.cardsContainer
+{
+    padding-top: 2rem;
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+}
+
+/* Search Bar Styles */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-center;
+  justify-content: flex-center;
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  margin-top: 1rem;
+  max-width: 600px;
+}
+.filter {
+  margin-left: 10px;
+      direction: rtl;
+  text-align: center;
+}
+.filter select {
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 0.5rem;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+  direction: rtl;
+}
+
+.filter select:focus {
+  outline: none;
+  background-color: #ddd;
+}
+.searchButton
+{
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background-color: red;
+  border-radius: 10px;
+  border: solid 1px;
+  border-color: red;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+.searchButton:hover
+{
+  background-color: white;
+  color: red;
+  border: solid 0.5px;
+  border-color: red;
+}
+
+@media only screen and (min-width: 730.5px) {
+  .postButtonContainer
+  {
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .postButton {
+    position: relative;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-left: auto;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: red;
+    border-radius: 10px;
+    border: solid 1px;
+    border-color: red;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .postButton:hover {
+    background-color: white;
+    color: red;
+    border: solid 1px;
+    border-color: red;
+  }
+  
+.jobCard
+{
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 5.5rem;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.6rem;
+    box-shadow: #ccc;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2); /* Set the box-shadow */
+    transition: box-shadow 0.3s ease; /* Add a transition effect to the box-shadow */
+}
+.jobCard:hover
+{
+    box-shadow: none; /* Remove the box-shadow when the card is hovered */
+}
+.logoTableColumn
+{
+  display: flex;
+  align-items: center;
+}
+.companyLogo 
+{
+    position: absolute;
+    max-width: 4.5rem;
+    max-height: 4.5rem;
+    left: auto;
+    right: 0.7rem;
+    border: solid 0.05px;
+    border-color: grey;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50%;
+  }
+  .jobTitle
+  {
+    position: absolute;
+    top: 0.5rem;
+    bottom: auto;
+    left: auto;
+    right: 7rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .companyName
+  {
+    position: absolute;
+    top: 2.3rem;
+    bottom: auto;
+    left: auto;
+    right: 7rem;
+    font-size: 0.95rem;
+    font-weight:400
+  }
+  .jobLocation
+  {
+    display: inline-block;
+    font-size: 0.75rem;
+    border: solid 0.5px;
+    border-color: rgb(205, 202, 202);
+    border-radius: 0.6rem;
+    margin-left: 4px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .salary
+  {
+    display: inline-block;
+    border: solid 0.5px;
+    border-color: rgb(205, 202, 202);
+    border-radius: 0.6rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: 5px;
+  }
+  .locationAndSalaryContainer
+  {
+    position: absolute;
+    top: 4.5rem;
+    bottom: auto;
+    left: auto;
+    right: 7rem;
+    font-size: 0.8rem;
+    font-weight:400;
+  }
+  .filterTags
+  {
+    position: absolute;
+    top: 2.5rem;
+    bottom: auto;
+    left: auto;
+    right: 50%;
+    font-size: 0.8rem;
+    font-weight:400;
+  }
+  .filter1
+  {
+    display: inline-block;
+    border: solid 0.5px;
+    border-radius: 0.6rem;
+    margin-left: 4px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;   
+  }
+  .filter2
+  {
+    display: inline-block;
+    border: solid 0.5px;
+    border-radius: 0.6rem;
+    margin-left: 4px;
+    padding-left: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .ApplyButtonTableColumn
+  {
+    display: flex;
+    align-items: center;
+  }
+  .applyButton
+  {
+    position: absolute;
+    visibility: hidden;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    left: 0.7rem;
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: red;
+    border-radius: 10px;
+    border: solid 0.5px;
+    border-color: red;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .timePosted
+  {
+    display: flex;
+    position:absolute;
+    left: 0.4rem;
+    bottom: 0.4rem;
+    align-items: center;
+    margin-left: 0.4rem;
+    align-self: end;
+  }
+  .jobCard:hover .applyButton
+  {
+    visibility: visible;
+  }
+  .applyButton:hover
+  {
+    background-color: white;
+    color: red;
+    border: solid 0.5px;
+    border-color: red;
+  }
+.pin
+{
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+}
+  @media only screen and (max-width: 730.49px) {
+    .postButtonContainer
+    {
+      width: 100%;
+      display: flex;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    .postButton {
+      margin-left: auto;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background-color: red;
+      border-radius: 10px;
+      border: solid 1px;
+      border-color: red;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .postButton:hover {
+      background-color: white;
+      color: red;
+      border: solid 1px;
+      border-color: red;
+    }
+  .jobCard
+  {
+      display: grid;
+      position: relative;
+      grid-template-columns: 1fr 3fr 2fr 1fr;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      height: 6rem;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+      box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2); /* Set the box-shadow */
+      transition: box-shadow 0.3s ease; /* Add a transition effect to the box-shadow */
+  }
+  .jobCard:hover
+  {
+    box-shadow: none; /* Remove the box-shadow when the card is hovered */
+  }
+  .companyLogo {
+    max-width: 4.5rem;
+    max-height: 4.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 0.05px;
+    border-color: grey;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50%;
+  }
+  .logoTableColumn
+  {
+    display: flex;
+    grid-column: 1 / 2;
+    align-items: center;
+  }
+  .CompanyNameAndJobTitleContainer
+  {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: repeat(3, 2rem);
+    box-sizing: border-box;
+    max-height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .jobTitle
+  {
+    font-size: 0.95rem;
+    font-weight: bold;
+    align-self: start;
+  }
+  .companyName
+  {
+    font-size: 0.9rem;
+    font-weight:400;
+    align-self: center;
+  }
+  .jobLocation
+  {
+    display: inline-block;
+    font-size: 0.75rem;
+    border: solid 0.5px;
+    border-color: rgb(205, 202, 202);
+    border-radius: 0.6rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .salary
+  {
+    display: inline-block;
+    font-size: 0.75rem;
+    border: solid 0.5px;
+    border-color: rgb(205, 202, 202);
+    border-radius: 0.6rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: 5px;
+  }
+  .locationAndSalaryContainer
+  {
+    grid-row: 3 / 4;
+    font-size: 0.8rem;
+    font-weight:400;
+    align-self: center;
+  }
+  .filterTags
+  {
+    grid-column: 3 / 5;
+    justify-self: start;
+    align-self: center;
+  }
+  .filter1
+  {
+    display: inline-block;
+    margin-left: 4px;
+    display: inline-block;
+    border: solid 0.5px;
+    border-radius: 0.6rem;
+    margin-left: 4px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.75rem;
+
+  }
+  .filter2
+  {
+    display: inline-block;
+    margin-left: 4px;
+    display: inline-block;
+    border: solid 0.5px;
+    border-radius: 0.6rem;
+    margin-left: 4px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.75rem;
+  }
+    .ApplyButtonTableColumn
+    {
+      grid-column: 5 / 6;
+      display: flex;
+      align-items: center;
+      display: none;
+    }
+    .applyButton
+    {
+      position: absolute;
+      visibility: hidden;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      left: 0.7rem;
+      display: inline-block;
+      padding: 8px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      background-color: red;
+      border-radius: 10px;
+      border: solid 0.5px;
+      border-color: red;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .timePosted
+    {
+      display: flex;
+      position:absolute;
+      left: 0.4rem;
+      bottom: 0.4rem;
+      align-items: center;
+      margin-left: 0.4rem;
+      align-self: end;
+      font-size: 0.75rem;
+    }
+    .jobCard:hover .applyButton
+    {
+      visibility: visible;
+    }
+    .applyButton:hover
+    {
+      background-color: white;
+      color: red;
+      border: solid 0.5px;
+      border-color: red;
+    }
+    .pin
+    {
+      position: absolute;
+      left: 0.5rem;
+      top: 0.5rem;
+    }
+  }
+  @media only screen and (max-width: 630px) {
+    .postButtonContainer
+    {
+      width: 100%;
+      display: flex;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    .postButton {
+      position: relative;
+      margin-top: 1rem;
+      margin-right: 1rem;
+      margin-left: auto;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background-color: red;
+      border-radius: 10px;
+      border: solid 1px;
+      border-color: red;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .postButton:hover {
+      background-color: white;
+      color: red;
+      border: solid 1px;
+      border-color: red;
+    }
+  .jobCard
+  {
+      display: grid;
+      position: relative;
+      grid-template-columns: 1fr 2fr 1fr 1fr;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      height: 6rem;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+      box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2); /* Set the box-shadow */
+      transition: box-shadow 0.3s ease; /* Add a transition effect to the box-shadow */
+  }
+  .jobCard:hover
+  {
+    box-shadow: none; /* Remove the box-shadow when the card is hovered */
+  }
+  .companyLogo {
+    max-width: 3.5rem;
+    max-height: 3.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 0.05px;
+    border-color: grey;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50%;
+  }
+  .logoTableColumn
+  {
+    display: flex;
+    grid-column: 1 / 2;
+    align-items: center;
+  }
+  .CompanyNameAndJobTitleContainer
+  {
+    grid-column: 2 / 5;
+    display: grid;
+    grid-template-rows: repeat(3, 2rem);
+    box-sizing: border-box;
+    max-height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .jobTitle
+  {
+    font-size: 0.95rem;
+    font-weight: bold;
+    align-self: start;
+  }
+  .companyName
+  {
+    font-size: 0.9rem;
+    font-weight:400;
+    align-self: center;
+  }
+  .jobLocation
+  {
+    display: inline-block;
+    font-size: 0.75rem;
+    border: solid 0.5px;
+    border-color: rgb(205, 202, 202);
+    border-radius: 0.6rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .salary
+  {
+    display: inline-block;
+    font-size: 0.75rem;
+    border: solid 0.5px;
+    border-color: rgb(205, 202, 202);
+    border-radius: 0.6rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: 5px;
+  }
+  .locationAndSalaryContainer
+  {
+    grid-row: 3 / 4;
+    font-size: 0.8rem;
+    font-weight:400;
+    align-self: center;
+  }
+  .filterTags
+  {
+    grid-column: 3 / 5;
+    align-self: center;
+    display: none;
+  }
+  .filter1
+  {
+    display: inline-block;
+    margin-left: 4px;
+    display: inline-block;
+    border: solid 0.5px;
+    border-radius: 0.6rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.75rem;
+
+  }
+  .filter2
+  {
+    display: inline-block;
+    margin-left: 4px;
+    display: inline-block;
+    border: solid 0.5px;
+    border-radius: 0.6rem;
+    margin-left: 4px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.75rem;
+  }
+    .ApplyButtonTableColumn
+    {
+      grid-column: 5 / 6;
+      display: flex;
+      align-items: center;
+      display: none;
+    }
+    .applyButton
+    {
+      position: absolute;
+      visibility: hidden;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      left: 0.7rem;
+      display: inline-block;
+      padding: 8px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      background-color: red;
+      border-radius: 10px;
+      border: solid 0.5px;
+      border-color: red;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .timePosted
+    {
+      grid-column: 4 / 5;
+      align-items: center;
+      display: flex;
+      height: 100%;
+      left: 0.3rem;
+      bottom: 0;
+      font-size: 0.75rem;
+    }
+    .jobCard:hover .applyButton
+    {
+      visibility: visible;
+    }
+    .applyButton:hover
+    {
+      background-color: white;
+      color: red;
+      border: solid 0.5px;
+      border-color: red;
+    }
+    .pin
+    {
+      position: absolute;
+      left: 0.5rem;
+      top: 0.5rem;
+    }
+  }
+
+  
+  @media screen and (min-width: 630.05px) {
+    /* New Search Bar */
+    /* .search-container form {
+      margin-top: 2rem;
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      align-self: center;
+      width: 70%;
+      max-width: 600px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    } */
+    /* .search-container input[type="text"]:focus
+    {
+      outline: none;
+      box-shadow: 0px 0px 10px rgb(238, 118, 118);
+    } */
+    /* .search-container input[type="text"]
+    {
+      width: 100%;
+      height: 2.5rem;
+      font-size: 18px;
+      padding: 0;
+      border-radius: 20px;
+      border: none;
+      padding-right: 6px;
+      padding-left: 2.5rem;
+      border: none;
+    } */
+    .search-container button[type="submit"]
+    {
+      position: absolute;
+      left: 0;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      cursor: pointer;
+      height: 2.5rem;
+      width: 2.5rem;
+      border: none;
+      background-color: rgb(253, 71, 71);
+    }
+    .search-container button[type="submit"]:hover
+    {
+      position: absolute;
+      left: 0;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      cursor: pointer;
+      height: 2.5rem;
+      width: 2.5rem;
+      border: solid;
+      border-color:rgb(253, 71, 71);
+      background-color: white;
+    }
+    .searchButton
+    {
+      padding: 0px 15px;
+    }
+  }
+
+  @media screen and (max-width: 630.04px) {
+    /* New Search Bar */
+    /* .search-container form {
+      margin-top: 2rem;
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      align-self: center;
+      height: 2.5rem;
+      width: 90%;
+      max-width: 600px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+    .search-container input[type="text"]:focus
+    {
+      outline: none;
+      box-shadow: 0px 0px 10px rgb(238, 118, 118);
+    }
+    .search-container input[type="text"]
+    {
+      width: 100%;
+      height: 2.5rem;
+      font-size: 18px;
+      padding: 0;
+      border-radius: 20px;
+      border: none;
+      padding-right: 6px;
+      padding-left: 2.5rem;
+      border: none;
+    } */
+    /* .search-container button[type="submit"]
+    {
+      position: absolute;
+      left: 0;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      cursor: pointer;
+      height: 2.5rem;
+      width: 2.5rem;
+      border: none;
+      background-color: rgb(253, 71, 71);
+    } */
+    /* .search-container button[type="submit"]:hover
+    {
+      position: absolute;
+      left: 0;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      cursor: pointer;
+      height: 2.5rem;
+      width: 2.5rem;
+      border: solid;
+      border-color:rgb(253, 71, 71);
+      background-color: white;
+    } */
+    .filter-container 
+    {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+    }
+    .filter
+    {
+      display: flex;
+      justify-items: center;
+      width: 100%;
+    }
+    .filter select
+    {
+      width: 100%;
+      text-align: center;
+      margin-left: 0.3rem;
+      margin-right: 0.3rem;
+    }
+    .searchButton
+    {
+      padding: 0px 15px;
+    }
+  }
