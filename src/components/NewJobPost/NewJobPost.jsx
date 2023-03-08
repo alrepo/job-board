@@ -24,12 +24,12 @@ function NewJobPost()
             <InputDiv>
                 <Label> اسم المنشأة:{"*"} </Label>
                 <Input></Input>
-                <br></br>
+                
                 <LogoDiv>
                 <Label>شعار المنشأة (بصيغة PNG أو JPG)</Label>
                     <LogoUploader />
                 </LogoDiv>
-                <br></br>
+                
                 <Label>وصف للمنشأة:{"*"} </Label>
                 <CustomTextArea
                     // ref={textareaRef}

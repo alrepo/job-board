@@ -121,6 +121,8 @@ export const Input = styled.input`
 export const LogoDiv = styled.div`
 
 padding: 0.5rem;
+margin-top: 1rem;
+margin-bottom: 1rem;
 border: dashed;
 border-color: grey;
 display: inline;
