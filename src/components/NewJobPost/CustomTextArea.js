@@ -8,7 +8,7 @@ export const CustomTextArea = styled(TextareaAutosize)`
   letter-spacing: 0.1px;
   color: black;
   /* background-color: #F7F7F7; */
-  padding: 4px 16px 4px 42px;
+  padding: 4px 4px 4px 4px;
   border-radius: 4px;
   text-align: right;
   resize: vertical;
