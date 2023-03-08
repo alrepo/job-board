@@ -26,7 +26,7 @@ function NewJobPost()
                 <Input></Input>
                 <br></br>
                 <LogoDiv>
-                <Label>  شعار المنشأة (بصيغة .PNG أو .JPG): </Label>
+                <Label>شعار المنشأة (بصيغة PNG أو JPG)</Label>
                     <LogoUploader />
                 </LogoDiv>
                 <br></br>

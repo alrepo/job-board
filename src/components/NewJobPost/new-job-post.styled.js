@@ -49,8 +49,10 @@ export const Heading = styled.div`
     background-color: white;
     box-shadow: #ccc;
     box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2); /* Set the box-shadow */
-
-
+    @media only screen and (max-width: 630px) 
+    {
+        font-size: 14px;
+    }
 `
 export const Label = styled.p`
 
@@ -58,6 +60,10 @@ font-family: Tajawal, sans-serif;
 align-self: end;
 margin: 0;
 font-weight: 900;
+@media only screen and (max-width: 630px) 
+{
+    font-size: 14px;
+}
 `
 
 export const InputDiv = styled.div`
@@ -82,6 +88,7 @@ export const InputDiv = styled.div`
 }
 @media only screen and (max-width: 630px) 
 {
+    font-size: 14px;
     width: 100%;
 }
 `
@@ -106,13 +113,18 @@ export const Input = styled.input`
     height: 2rem;
     border-radius: 0.5rem;
 }
+@media only screen and (max-width: 630px) 
+{
+    font-size: 14px;
+}
 `
 export const LogoDiv = styled.div`
 
-padding: 1rem;
+padding: 0.5rem;
 border: dashed;
 border-color: grey;
 display: inline;
+text-align: center;
 `
 export const CompanyLogo = styled.div`
 
