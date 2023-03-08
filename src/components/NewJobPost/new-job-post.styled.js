@@ -38,6 +38,8 @@ export const DetailsDiv = styled.div`
 export const Heading = styled.div`
     font-family: Tajawal,sans-serif;
     position: absolute;
+    display: flex;
+    text-align: center;
     left: 50%;
     transform: translate(-50%, -100%);
     border-color: red;
@@ -127,19 +129,19 @@ export const CompanyLogo = styled.div`
     border-radius: 50%;
 `
 
-export const TextArea = styled.textarea`
+// export const TextArea = styled.textarea`
 
-    font-family: Tajawal, sans-serif;
-    background-color: #fbfaf8;
-    height: 100px;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    align-self: end;
-    resize: none;
-    &:focus
-    {
-        outline-color: grey;
-    }
-`
+//     font-family: Tajawal, sans-serif;
+//     background-color: #fbfaf8;
+//     height: 100px;
+//     padding: 10px;
+//     border: 2px solid #ccc;
+//     border-radius: 8px;
+//     font-size: 16px;
+//     align-self: end;
+//     resize: none;
+//     &:focus
+//     {
+//         outline-color: grey;
+//     }
+// `

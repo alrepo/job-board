@@ -9,7 +9,6 @@ import {
         InputDiv,
         Input,
         Label,
-        TextArea,
         LogoDiv,
 
 } from "./new-job-post.styled.js";
