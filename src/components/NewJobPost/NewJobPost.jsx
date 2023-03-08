@@ -20,7 +20,7 @@ function NewJobPost()
      
     return(
         <DetailsDiv>
-            <Heading>عن المنشأة (جهة التوظيف)</Heading>
+            <Heading>عن جهة التوظيف</Heading>
             <InputDiv>
                 <Label> اسم المنشأة:{"*"} </Label>
                 <Input></Input>
