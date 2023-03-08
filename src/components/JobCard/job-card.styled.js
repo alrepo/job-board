@@ -92,8 +92,8 @@ export const JobCardDiv = styled.div`
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.6rem;
-    box-shadow: #ccc;
     cursor: pointer;
+    box-shadow: #ccc;
     box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2); /* Set the box-shadow */
     transition: box-shadow 0.3s ease; /* Add a transition effect to the box-shadow */
 

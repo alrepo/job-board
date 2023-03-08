@@ -3,7 +3,7 @@ import Jobs from "./components/Jobs/Jobs.jsx";
 import JobDetailsPage from "./components/JobDetailsPage/JobDetailsPage.jsx";
 import JobApplication from './components/JobApplication/JobApplication.jsx';
 import { Routes, Route} from "react-router-dom";
-import NewJobPost from "./components/NewJobPost.jsx";
+import NewJobPost from "./components/NewJobPost/NewJobPost.jsx";
 
 function App()
 {
