@@ -58,12 +58,19 @@ const InputField = styled.input`
 `;
 
 const RemainingChars = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  font-size: 12px;
-  color: #aaa;
+@media screen and (min-width: 50px)
+{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #aaa;
+}
+/* @media screen and (max-width: 549.99px)
+{
+    display: none;
+} */
 `;
 
 export default Input;
