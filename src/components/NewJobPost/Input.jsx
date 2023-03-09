@@ -35,7 +35,7 @@ const InputField = styled.input`
   font-family: Tajawal, sans-serif;
   background-color: #fbfaf8;
   border: 2px solid #ccc;
-  padding-left: 10px; /* Add some padding to make room for the remaining characters count */
+  padding-left: 15px; /* Add some padding to make room for the remaining characters count */
   align-self: start;
 
   &:focus {
@@ -62,7 +62,7 @@ const RemainingChars = styled.div`
 {
     position: absolute;
     top: 50%;
-    left: 15px;
+    left: 10px;
     transform: translateY(-50%);
     font-size: 12px;
     color: #aaa;
