@@ -13,7 +13,7 @@ export const DetailsDiv = styled.div`
 {
     height: 100%;
     width: 80%;
-    margin-top: 8rem;
+    margin-bottom: 2rem;
     margin-right: auto;
     margin-left: auto;
     background-color: #fbfaf8;
@@ -26,7 +26,7 @@ export const DetailsDiv = styled.div`
 {
     height: 100%;
     width: 100%;
-    margin-top: 8rem;
+    margin-bottom: 2rem;
     margin-right: auto;
     margin-left: auto;
     background-color: #fbfaf8;

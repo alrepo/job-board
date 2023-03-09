@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const MAX_LENGTH = 50;
+let MAX_LENGTH = 0;
 
 function Input({ value, setValue, ...props }) {
   const remainingChars = MAX_LENGTH - value.length;
@@ -26,9 +26,18 @@ function Input({ value, setValue, ...props }) {
   );
 }
 
-function ParentComponent() {
+function ParentComponent(props) {
   const [value, setValue] = useState('');
-
+  if (props.name === "companyName")
+  {
+    MAX_LENGTH = 50;
+    console.log("companyName");
+  }
+  else if (props.name === "jobTitle")
+  {
+    MAX_LENGTH = 30;
+    console.log("jobTitle");
+  }
   return (
     <>
       <Input value={value} setValue={setValue} />
@@ -40,7 +49,7 @@ function ParentComponent() {
 function AnotherComponent({ remainingChars }) {
   // use the latest value of remainingChars as needed
   return (
-    <CounterDiv>{(50-remainingChars)}{"/50"}</CounterDiv>
+    <CounterDiv>{(MAX_LENGTH-remainingChars)}{"/"+MAX_LENGTH}</CounterDiv>
   );
 }
 
