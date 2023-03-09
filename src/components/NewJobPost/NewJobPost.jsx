@@ -13,7 +13,8 @@ import {
 } from "./new-job-post.styled.js";
 import { CustomTextArea } from './CustomTextArea';
 import LogoUploader from "./LogoUploader.jsx";
-import Input from "./Input";
+import ParentComponent from "./Input";
+// import { remainingChars } from "./Input";
 
 function NewJobPost()
 {
@@ -23,7 +24,7 @@ function NewJobPost()
             <Heading>عن جهة التوظيف</Heading>
             <InputDiv>
                 <Label> اسم المنشأة:{"*"} </Label>
-                <Input></Input>
+                <ParentComponent></ParentComponent>
                 
                 <LogoDiv>
                 <Label>شعار المنشأة (بصيغة PNG أو JPG)</Label>

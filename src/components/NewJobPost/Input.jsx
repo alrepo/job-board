@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-function Input(props) {
-  const [value, setValue] = useState('');
+const MAX_LENGTH = 50;
 
-  const remainingChars = 50 - value.length;
+function Input({ value, setValue, ...props }) {
+  const remainingChars = MAX_LENGTH - value.length;
 
   const handleChange = event => {
     const { value } = event.target;
-    if (value.length <= 50) {
+    if (value.length <= MAX_LENGTH) {
       setValue(value);
     }
   };
@@ -28,7 +28,6 @@ function Input(props) {
 const Wrapper = styled.div`
   position: relative;
   display: grid;
-
 `;
 
 const InputField = styled.input`
@@ -56,16 +55,13 @@ const InputField = styled.input`
     font-size: 14px;
   }
 `;
-
+const CounterDiv = styled.div`
+font-size: 12px;
+`
 const RemainingChars = styled.div`
 @media screen and (min-width: 50px)
 {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #aaa;
+    display: none;
 }
 /* @media screen and (max-width: 549.99px)
 {
@@ -73,4 +69,22 @@ const RemainingChars = styled.div`
 } */
 `;
 
-export default Input;
+function ParentComponent() {
+  const [value, setValue] = useState('');
+
+  return (
+    <>
+      <Input value={value} setValue={setValue} />
+      <AnotherComponent remainingChars={MAX_LENGTH - value.length} />
+    </>
+  );
+}
+
+function AnotherComponent({ remainingChars }) {
+  // use the latest value of remainingChars as needed
+  return (
+    <CounterDiv>{"باقي "}{remainingChars}{" حرف"}</CounterDiv>
+  );
+}
+
+export default ParentComponent;
