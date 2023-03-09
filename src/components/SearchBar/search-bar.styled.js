@@ -54,7 +54,11 @@ export const Select = styled.select`
     border-radius: 10px;
     text-align: center;
     direction: rtl;
-
+    width: ${(props) => (props.name === 'JobCity' ? '40%':null)};
+    &:focus {
+    box-shadow: 0 0 2px 2px #4799eb;
+    outline: #4799eb;
+  }
     @media only screen and (max-width: 630.04px) 
     {
         width: 100%;

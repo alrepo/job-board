@@ -14,11 +14,11 @@ import {
 import CustomTextArea from './CustomTextArea.jsx';
 import LogoUploader from "./LogoUploader.jsx";
 import ParentComponent from "./Input";
+import JobCity from "./JobCity.jsx";
 // import { remainingChars } from "./Input";
 
 function NewJobPost()
-{
-     
+{   
     return(
         <div>
         <DetailsDiv style={{marginTop: "4rem"}}>
@@ -45,12 +45,9 @@ function NewJobPost()
         <DetailsDiv>
             <Heading>عن الوظيفة</Heading>
             <InputDiv>
-                <Label placeholder="مثلا: 
-                    يتولى مدير التشغيل في مطعمنا إدارة وتشغيل خمسة فروع...إلخ"
-                    > المسمى الوظيفي :{"*"}
-                 </Label>
+                <Label> المسمى الوظيفي :{"*"}</Label>
                 <ParentComponent name="jobTitle"></ParentComponent>
-                                
+                               
                 <Label>الوصف الوظيفي:{"*"} </Label>
                 <CustomTextArea
                     name="jobDescription"
@@ -58,6 +55,8 @@ function NewJobPost()
                     placeholder="مثلا: 
                     يتولى مدير التشغيل في مطعمنا إدارة وتشغيل خمسة فروع...إلخ"
                 />
+                <Label> منطقة التوظيف :{"*"}</Label>
+                <JobCity />
             </InputDiv>
         </DetailsDiv>
         </div>
