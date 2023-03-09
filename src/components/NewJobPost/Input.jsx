@@ -8,6 +8,7 @@ function Input({ value, setValue, ...props }) {
 
   const handleChange = event => {
     const { value } = event.target;
+    console.log(value);
     if (value.length <= MAX_LENGTH) {
       setValue(value);
     }
@@ -22,6 +23,24 @@ function Input({ value, setValue, ...props }) {
       />
       <RemainingChars>{remainingChars}</RemainingChars>
     </Wrapper>
+  );
+}
+
+function ParentComponent() {
+  const [value, setValue] = useState('');
+
+  return (
+    <>
+      <Input value={value} setValue={setValue} />
+      <AnotherComponent remainingChars={MAX_LENGTH - value.length} />
+    </>
+  );
+}
+
+function AnotherComponent({ remainingChars }) {
+  // use the latest value of remainingChars as needed
+  return (
+    <CounterDiv>{(50-remainingChars)}{"/50"}</CounterDiv>
   );
 }
 
@@ -68,23 +87,5 @@ const RemainingChars = styled.div`
     display: none;
 } */
 `;
-
-function ParentComponent() {
-  const [value, setValue] = useState('');
-
-  return (
-    <>
-      <Input value={value} setValue={setValue} />
-      <AnotherComponent remainingChars={MAX_LENGTH - value.length} />
-    </>
-  );
-}
-
-function AnotherComponent({ remainingChars }) {
-  // use the latest value of remainingChars as needed
-  return (
-    <CounterDiv>{"باقي "}{remainingChars}{" حرف"}</CounterDiv>
-  );
-}
 
 export default ParentComponent;

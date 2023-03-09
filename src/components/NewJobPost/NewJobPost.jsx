@@ -11,7 +11,7 @@ import {
         LogoDiv,
 
 } from "./new-job-post.styled.js";
-import { CustomTextArea } from './CustomTextArea';
+import CustomTextArea from './CustomTextArea.jsx';
 import LogoUploader from "./LogoUploader.jsx";
 import ParentComponent from "./Input";
 // import { remainingChars } from "./Input";
@@ -34,7 +34,8 @@ function NewJobPost()
                 <Label>وصف للمنشأة:{"*"} </Label>
                 <CustomTextArea
                     // ref={textareaRef}
-                    // placeholder="أكتب ردك"
+                    placeholder="مثلا: 
+                    نحن مطعم متخصص في المأكولات البحرية. لدينا خمسة فروع...الخ"
                 />
             </InputDiv>
         </DetailsDiv>
