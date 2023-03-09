@@ -7,13 +7,13 @@ import {
         DetailsDiv,
         Heading,
         InputDiv,
-        Input,
         Label,
         LogoDiv,
 
 } from "./new-job-post.styled.js";
 import { CustomTextArea } from './CustomTextArea';
 import LogoUploader from "./LogoUploader.jsx";
+import Input from "./Input";
 
 function NewJobPost()
 {

@@ -93,31 +93,31 @@ export const InputDiv = styled.div`
 }
 `
 
-export const Input = styled.input`
-    background-color: #fbfaf8;
-    border: 2px solid #ccc;
-    align-self: start;
-    &:focus {
-    box-shadow: 0 0 2px 2px #4799eb;
-    outline: 0;
-  }
-@media only screen and (min-width: 730.5px) 
-{
-    display: block;
-    height: 2rem;
-    border-radius: 0.5rem;
-}
-@media only screen and (max-width: 730.49px) 
-{
-    display: block;
-    height: 2rem;
-    border-radius: 0.5rem;
-}
-@media only screen and (max-width: 630px) 
-{
-    font-size: 14px;
-}
-`
+// export const Input = styled.input`
+//     background-color: #fbfaf8;
+//     border: 2px solid #ccc;
+//     align-self: start;
+//     &:focus {
+//     box-shadow: 0 0 2px 2px #4799eb;
+//     outline: 0;
+//   }
+// @media only screen and (min-width: 730.5px) 
+// {
+//     display: block;
+//     height: 2rem;
+//     border-radius: 0.5rem;
+// }
+// @media only screen and (max-width: 730.49px) 
+// {
+//     display: block;
+//     height: 2rem;
+//     border-radius: 0.5rem;
+// }
+// @media only screen and (max-width: 630px) 
+// {
+//     font-size: 14px;
+// }
+// `
 export const LogoDiv = styled.div`
 
 padding: 0.5rem;
