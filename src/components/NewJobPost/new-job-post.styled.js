@@ -116,7 +116,13 @@ export const CompanyLogo = styled.div`
     /* background-position: center center; */
     border-radius: 50%;
 `
+export const SalaryDiv = styled.div`
 
+display: flex;
+background-color: yellow;
+box-sizing: border-box;
+justify-content: center;
+`
 // export const TextArea = styled.textarea`
 
 //     font-family: Tajawal, sans-serif;

@@ -55,7 +55,9 @@ export const Select = styled.select`
     text-align: center;
     direction: rtl;
     width: ${(props) => 
-    ((props.name === 'JobCity') || (props.name === 'JobCategory') || (props.name === 'CompanyCategory') ? '40%': null)
+    ((props.name === 'JobCity') || (props.name === 'JobCategory') 
+    || (props.name === 'SalaryFrom') || (props.name === 'SalaryTo')
+    || (props.name === 'CompanyCategory') ? '40%': null)
     };
     &:focus {
     box-shadow: 0 0 2px 2px #4799eb;

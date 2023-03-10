@@ -9,6 +9,7 @@ import {
         InputDiv,
         Label,
         LogoDiv,
+        SalaryDiv,
 
 } from "./new-job-post.styled.js";
 import CustomTextArea from './CustomTextArea.jsx';
@@ -17,6 +18,9 @@ import ParentComponent from "./Input";
 import JobCity from "./JobCity.jsx";
 import JobCategory from "./JobCategory.jsx";
 import CompanyCategory from "./CompanyCategory.jsx";
+import SalaryFrom from "./SalaryFrom.jsx";
+import SalaryTo from "./SalaryTo.jsx";
+
 // import { remainingChars } from "./Input";
 
 function NewJobPost()
@@ -63,6 +67,11 @@ function NewJobPost()
                 <JobCategory/>
                 <Label> تصنيف مكان العمل :{"*"}</Label>
                 <CompanyCategory />
+                <Label>الراتب الشهري المتوقع (الأساسي فقط):{"*"}</Label>
+                <SalaryDiv>
+                    <SalaryFrom /><SalaryTo />
+                </SalaryDiv>
+
             </InputDiv>
         </DetailsDiv>
         </div>
