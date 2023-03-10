@@ -17,7 +17,7 @@ function SearchBar() {
       </form> */}
       <FilterContainer>
         <Filter>
-          <Select>
+          <Select style={{marginTop: "0.5rem"}}>
             <option value="كل المناطق">
               <span role="img" aria-label="emoji">
                 🌏{" "}
@@ -30,7 +30,7 @@ function SearchBar() {
           </Select>
         </Filter>
         <Filter>
-          <Select>
+          <Select style={{marginTop: "0.5rem"}}>
             <option value="كل الفئات">
               <span role="img" aria-label="emoji">
                 🍴{" "}
@@ -43,7 +43,7 @@ function SearchBar() {
           </Select>
         </Filter>
         <Filter>
-          <Select>
+          <Select style={{marginTop: "0.5rem"}}>
             <option value="كل الوظائف">
               <span role="img" aria-label="emoji">
                 👨‍🍳{" "}

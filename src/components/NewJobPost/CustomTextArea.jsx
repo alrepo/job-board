@@ -24,7 +24,7 @@ const StyledTextArea = styled(TextareaAutosize)`
     outline: 0;
   }
   ::placeholder {
-    color: #D9D9D9;
+    color: #BEBEBE;
   }
   ${({ $minHeight }) => $minHeight && css`
     min-height: ${$minHeight}px;

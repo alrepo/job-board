@@ -3,12 +3,11 @@ import styled from 'styled-components';
 
 let MAX_LENGTH = 0;
 
-function Input({ value, setValue, ...props }) {
+function Input({ name, value, setValue, ...props }) {
   const remainingChars = MAX_LENGTH - value.length;
 
   const handleChange = event => {
     const { value } = event.target;
-    console.log(value);
     if (value.length <= MAX_LENGTH) {
       setValue(value);
     }
@@ -18,6 +17,7 @@ function Input({ value, setValue, ...props }) {
     <Wrapper>
       <InputField
         {...props}
+        name={name}
         value={value}
         onChange={handleChange}
       />
@@ -31,16 +31,14 @@ function ParentComponent(props) {
   if (props.name === "companyName")
   {
     MAX_LENGTH = 50;
-    console.log("companyName");
   }
   else if (props.name === "jobTitle")
   {
     MAX_LENGTH = 30;
-    console.log("jobTitle");
   }
   return (
     <>
-      <Input value={value} setValue={setValue} />
+      <Input name={props.name} value={value} setValue={setValue} />
       <AnotherComponent remainingChars={MAX_LENGTH - value.length} />
     </>
   );
@@ -58,7 +56,16 @@ const Wrapper = styled.div`
   display: grid;
 `;
 
-const InputField = styled.input`
+const InputField = styled.input.attrs(props => ({
+  type: props.name === 'companyEmail' ? 'email' :
+        props.name === 'companyURL' ? 'url' : 'text',
+  placeholder: props.name === 'companyEmail' ? 'مثلا: example@example.com' :
+        props.name === 'companyURL' ? 'مثلا: https://www.example.com' : '',
+      }))`
+  ::placeholder
+  {
+    color: #BEBEBE;
+  }
   font-family: Tajawal, sans-serif;
   background-color: #fbfaf8;
   border: 2px solid #ccc;

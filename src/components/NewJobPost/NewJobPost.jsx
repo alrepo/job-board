@@ -69,6 +69,11 @@ function NewJobPost()
                 <SalaryDiv>
                     <SalaryFrom /><SalaryTo />
                 </SalaryDiv>
+                <Label> ايميل استقبال المتقدمين:{"*"} </Label>
+                <ParentComponent name="companyEmail"></ParentComponent>
+                <Label>{"أو"} </Label>
+                <Label> رابط التقديم (اذا لايوجد بريد إلكتروني):{"*"} </Label>
+                <ParentComponent name="companyURL"></ParentComponent>
 
             </InputDiv>
         </div>
