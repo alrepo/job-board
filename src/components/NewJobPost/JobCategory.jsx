@@ -3,7 +3,7 @@ import { Select } from '../SearchBar/search-bar.styled';
 
 const categories = [
   '👨‍🍳 اختر تصنيف',
-  'طباخ/شيف/معلم',
+  'طاهي/شيف/معلم',
   'مدير تشغيل',
   'مقدم خدمة',
   'خباز',
@@ -19,7 +19,7 @@ const categories = [
 
 function JobCategory({ value, onChange }) {
   return (
-    <Select name="JobCategory" value={value} onChange={onChange}>
+    <Select style={{marginBottom: "1rem"}} name="JobCategory" value={value} onChange={onChange}>
       {categories.map((category) => (
         <option key={category} value={category}>
           {category}

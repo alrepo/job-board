@@ -16,6 +16,7 @@ import LogoUploader from "./LogoUploader.jsx";
 import ParentComponent from "./Input";
 import JobCity from "./JobCity.jsx";
 import JobCategory from "./JobCategory.jsx";
+import CompanyCategory from "./CompanyCategory.jsx";
 // import { remainingChars } from "./Input";
 
 function NewJobPost()
@@ -35,7 +36,7 @@ function NewJobPost()
                 
                 <Label>وصف للمنشأة:{"*"} </Label>
                 <CustomTextArea
-                name="aboutCompany"
+                    name="aboutCompany"
                     // ref={textareaRef}
                     placeholder="مثلا: 
                     نحن مطعم متخصص في المأكولات البحرية. لدينا خمسة فروع...الخ"
@@ -57,9 +58,11 @@ function NewJobPost()
                     يتولى مدير التشغيل في مطعمنا إدارة وتشغيل خمسة فروع...إلخ"
                 />
                 <Label> مدينة التوظيف :{"*"}</Label>
-                <JobCity />
+                <JobCity/>
                 <Label> تصنيف الوظيفة :{"*"}</Label>
-                <JobCategory />
+                <JobCategory/>
+                <Label> تصنيف مكان العمل :{"*"}</Label>
+                <CompanyCategory />
             </InputDiv>
         </DetailsDiv>
         </div>

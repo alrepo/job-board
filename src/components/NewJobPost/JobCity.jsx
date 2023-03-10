@@ -28,7 +28,7 @@ const cities = [
 
 function JobCity({ value, onChange }) {
   return (
-    <Select name="JobCity" value={value} onChange={onChange}>
+    <Select style={{marginBottom: "1rem"}} name="JobCity" value={value} onChange={onChange}>
       {cities.map((city) => (
         <option key={city} value={city}>
           {city}
