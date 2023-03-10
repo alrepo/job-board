@@ -48,6 +48,7 @@ export const Select = styled.select`
     font-size: 16px;
     padding: 10px;
     margin-top: 0.5rem;
+    margin-left: ${(props) =>(props.name === 'SalaryFrom' ? '0.5rem' : null)};
     background-color: #f1f1f1;
     border: none;
     cursor: pointer;

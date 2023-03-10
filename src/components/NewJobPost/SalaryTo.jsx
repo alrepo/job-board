@@ -38,7 +38,7 @@ const salaryTo = [
 
 function SalaryTo({ value, onChange }) {
   return (
-    <Select style={{marginBottom: "1rem"}} name="salaryTo" value={value} onChange={onChange}>
+    <Select style={{marginBottom: "1rem"}} name="SalaryTo" value={value} onChange={onChange}>
       {salaryTo.map((salary) => (
         <option key={salary} value={salary}>
           {salary}

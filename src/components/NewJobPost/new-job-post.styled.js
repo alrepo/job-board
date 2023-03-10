@@ -119,9 +119,8 @@ export const CompanyLogo = styled.div`
 export const SalaryDiv = styled.div`
 
 display: flex;
-background-color: yellow;
 box-sizing: border-box;
-justify-content: center;
+justify-content: start;
 `
 // export const TextArea = styled.textarea`
 
