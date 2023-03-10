@@ -26,7 +26,7 @@ function NewJobPost()
 {   
     return(
         <div>
-            <InputDiv style={{marginTop: "2rem", paddingBottom: "1rem"}}>
+            <InputDiv style={{marginTop: "2rem", paddingTop: "1rem"}}>
             <Heading>عن جهة التوظيف</Heading>
 
                 <Label> اسم المنشأة:{"*"} </Label>
@@ -46,7 +46,7 @@ function NewJobPost()
                 />
             </InputDiv>
 
-            <InputDiv style={{marginTop: "4rem", paddingBottom: "1rem"}}>
+            <InputDiv style={{marginTop: "4rem", paddingTop: "1rem"}}>
             <Heading>عن الوظيفة</Heading>
 
                 <Label> المسمى الوظيفي :{"*"}</Label>
