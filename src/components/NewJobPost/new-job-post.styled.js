@@ -1,40 +1,40 @@
 import styled from "styled-components";
 
-export const DetailsDiv = styled.div`
+// export const DetailsDiv = styled.div`
 
-    font-family: Tajawal,sans-serif;
-    box-sizing: border-box;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    position: relative;
-    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2); /* Set the box-shadow */
+//     font-family: Tajawal,sans-serif;
+//     box-sizing: border-box;
+//     padding-left: 0.5rem;
+//     padding-right: 0.5rem;
+//     position: relative;
+//     box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2); /* Set the box-shadow */
     
-@media only screen and (min-width: 730.5px) 
-{
-    height: 100%;
-    width: 80%;
-    margin-bottom: 2rem;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #fbfaf8;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-radius: 1rem;
-}
+// @media only screen and (min-width: 730.5px) 
+// {
+//     height: 100%;
+//     width: 80%;
+//     margin-bottom: 2rem;
+//     margin-right: auto;
+//     margin-left: auto;
+//     background-color: #fbfaf8;
+//     padding-top: 1rem;
+//     padding-bottom: 1rem;
+//     border-radius: 1rem;
+// }
 
-@media only screen and (max-width: 730.49px) 
-{
-    height: 100%;
-    width: 100%;
-    margin-bottom: 2rem;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #fbfaf8;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-radius: 1rem;
-}
-`
+// @media only screen and (max-width: 730.49px) 
+// {
+//     height: 100%;
+//     width: 100%;
+//     margin-bottom: 2rem;
+//     margin-right: auto;
+//     margin-left: auto;
+//     background-color: #fbfaf8;
+//     padding-top: 1rem;
+//     padding-bottom: 1rem;
+//     border-radius: 1rem;
+// }
+// `
 export const Heading = styled.div`
     font-family: Tajawal,sans-serif;
     position: absolute;
@@ -81,6 +81,7 @@ export const InputDiv = styled.div`
     margin-bottom: 0.6rem;
     margin-top: 1rem;
     background-color: white;
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2); /* Set the box-shadow */
 
 @media only screen and (max-width: 730.49px) 
 {

@@ -4,7 +4,6 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { 
-        DetailsDiv,
         Heading,
         InputDiv,
         Label,
@@ -27,9 +26,9 @@ function NewJobPost()
 {   
     return(
         <div>
-        <DetailsDiv style={{marginTop: "4rem"}}>
+            <InputDiv style={{marginTop: "4rem"}}>
             <Heading>عن جهة التوظيف</Heading>
-            <InputDiv>
+
                 <Label> اسم المنشأة:{"*"} </Label>
                 <ParentComponent name="companyName"></ParentComponent>
                 
@@ -46,11 +45,10 @@ function NewJobPost()
                     نحن مطعم متخصص في المأكولات البحرية. لدينا خمسة فروع...الخ"
                 />
             </InputDiv>
-        </DetailsDiv>
 
-        <DetailsDiv>
+            <InputDiv style={{marginTop: "4rem"}}>
             <Heading>عن الوظيفة</Heading>
-            <InputDiv>
+
                 <Label> المسمى الوظيفي :{"*"}</Label>
                 <ParentComponent name="jobTitle"></ParentComponent>
                                
@@ -73,7 +71,6 @@ function NewJobPost()
                 </SalaryDiv>
 
             </InputDiv>
-        </DetailsDiv>
         </div>
 
     )
