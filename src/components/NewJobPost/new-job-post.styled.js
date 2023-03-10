@@ -41,7 +41,7 @@ export const Heading = styled.div`
     display: flex;
     text-align: center;
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -50%);
     border-color: red;
     border-radius: 5px;
     padding: 5px;
@@ -69,6 +69,7 @@ font-weight: 900;
 export const InputDiv = styled.div`
     font-family: Tajawal,sans-serif;
     display: grid;
+    position: relative;
     direction: rtl;
     box-sizing: border-box;
     padding: 1rem;
