@@ -15,6 +15,7 @@ import CustomTextArea from './CustomTextArea.jsx';
 import LogoUploader from "./LogoUploader.jsx";
 import ParentComponent from "./Input";
 import JobCity from "./JobCity.jsx";
+import JobCategory from "./JobCategory.jsx";
 // import { remainingChars } from "./Input";
 
 function NewJobPost()
@@ -55,8 +56,10 @@ function NewJobPost()
                     placeholder="مثلا: 
                     يتولى مدير التشغيل في مطعمنا إدارة وتشغيل خمسة فروع...إلخ"
                 />
-                <Label> منطقة التوظيف :{"*"}</Label>
+                <Label> مدينة التوظيف :{"*"}</Label>
                 <JobCity />
+                <Label> تصنيف الوظيفة :{"*"}</Label>
+                <JobCategory />
             </InputDiv>
         </DetailsDiv>
         </div>
