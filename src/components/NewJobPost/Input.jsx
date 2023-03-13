@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 let MAX_LENGTH = 0;
+let jobTitleValue = "";
 
 function Input({ name, value, setValue, ...props }) {
   const remainingChars = MAX_LENGTH - value.length;
-
   const handleChange = event => {
-    const { value } = event.target;
+    const value = event.target.value;
     if (value.length <= MAX_LENGTH) {
       setValue(value);
+      props.onChange(value);
     }
   };
 
@@ -28,6 +29,7 @@ function Input({ name, value, setValue, ...props }) {
 
 function ParentComponent(props) {
   const [value, setValue] = useState('');
+
   if (props.name === "companyName")
   {
     MAX_LENGTH = 50;
@@ -35,10 +37,16 @@ function ParentComponent(props) {
   else if (props.name === "jobTitle")
   {
     MAX_LENGTH = 30;
+    // jobTitleValue = value;
+  }
+  function updateValue(inputValue)
+  {
+    setValue(inputValue);
+    props.onChange(inputValue);
   }
   return (
     <>
-      <Input name={props.name} value={value} setValue={setValue} />
+      <Input name={props.name} value={value} setValue={setValue} onChange={updateValue}/>
       <AnotherComponent remainingChars={MAX_LENGTH - value.length} />
     </>
   );
@@ -105,3 +113,4 @@ const RemainingChars = styled.div`
 `;
 
 export default ParentComponent;
+export { jobTitleValue };

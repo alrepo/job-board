@@ -15,22 +15,24 @@ let jobs = [
     companyName: "مطاعم ماكدونلدز",
     companyLogo: "https://pbs.twimg.com/profile_images/1625792557291651073/GDxGcTsc_400x400.png",
     location: "المنطقة الشرقية",
-    salary: "150k-100k",
+    salary: "+9,000 ريال",
     filter1: "طباخ",
     filter2: "فاين دايننق",
     cardOptions: {fixed: 7, highlight: false, showLogo: true},
     timePosted: "2023-02-27T12:59-0500",
+    demoCard: false
   },
   {
     jobTitle: "Opration Manager",
     companyName: "Rabbit Restaurant",
     companyLogo: "https://img.freepik.com/premium-vector/rabbit-cartoon-logo-design-vector-illustration_256145-308.jpg?w=2000",
     location: "Makka",
-    salary: "150k-100k",
+    salary: "+7,000 ريال",
     filter1: "Manager",
     filter2: "Fast Food",
     cardOptions: {fixed: 1, highlight: true, showLogo: true},
-    timePosted: "2023-02-27T12:59-0500"
+    timePosted: "2023-02-27T12:59-0500",
+    demoCard: false
   },
   {
     jobTitle: "Barista",
@@ -41,51 +43,32 @@ let jobs = [
     filter1: "Barista",
     filter2: "Drive Thru",
     cardOptions: {fixed: 30, highlight: false, showLogo: false},
-    timePosted: "2023-02-27T12:59-0500"
+    timePosted: "2023-02-27T12:59-0500",
+    demoCard: false
   },
   {
     jobTitle: "طباخ خبير",
     companyName: "مطاعم ماكدونلدز",
     companyLogo: "https://pbs.twimg.com/profile_images/1625792557291651073/GDxGcTsc_400x400.png",
     location: "الرياض",
-    salary: "150k-100k",
+    salary: "+5,000 ريال",
     filter1: "طباخ",
     filter2: "فاين دايننق",
     cardOptions: {fixed: 0, highlight: false, showLogo: true},
-    timePosted: "2023-02-27T12:59-0500"
+    timePosted: "2023-02-27T12:59-0500",
+    demoCard: false
   },
   {
     jobTitle: "طباخ خبير",
     companyName: "مطاعم ماكدونلدز",
     companyLogo: "https://pbs.twimg.com/profile_images/1625792557291651073/GDxGcTsc_400x400.png",
     location: "الرياض",
-    salary: "150k-100k",
+    salary: "+10,000 ريال",
     filter1: "طباخ",
     filter2: "فاين دايننق",
     cardOptions: {fixed: 0, highlight: false, showLogo: true},
-    timePosted: "2023-02-27T12:59-0500"
-  },
-  {
-    jobTitle: "طباخ خبير",
-    companyName: "مطاعم ماكدونلدز",
-    companyLogo: "https://pbs.twimg.com/profile_images/1625792557291651073/GDxGcTsc_400x400.png",
-    location: "الرياض",
-    salary: null,
-    filter1: "طباخ",
-    filter2: "فاين دايننق",
-    cardOptions: {fixed: 0, highlight: false, showLogo: true},
-    timePosted: "2023-02-27T12:59-0500"
-  },
-  {
-    jobTitle: "طباخ خبير",
-    companyName: "مطاعم ماكدونلدز",
-    companyLogo: "https://pbs.twimg.com/profile_images/1625792557291651073/GDxGcTsc_400x400.png",
-    location: "الرياض",
-    salary: "150k-100k",
-    filter1: "طباخ",
-    filter2: "فاين دايننق",
-    cardOptions: {fixed: 0, highlight: false, showLogo: true},
-    timePosted: "2023-02-27T12:59-0500"
+    timePosted: "2023-02-27T12:59-0500",
+    demoCard: false
   },
   {
     jobTitle: "طباخ خبير",
@@ -96,7 +79,32 @@ let jobs = [
     filter1: "طباخ",
     filter2: "فاين دايننق",
     cardOptions: {fixed: 0, highlight: false, showLogo: true},
-    timePosted: "2023-02-27T12:59-0500"
+    timePosted: "2023-02-27T12:59-0500",
+    demoCard: false
+  },
+  {
+    jobTitle: "طباخ خبير",
+    companyName: "مطاعم ماكدونلدز",
+    companyLogo: "https://pbs.twimg.com/profile_images/1625792557291651073/GDxGcTsc_400x400.png",
+    location: "الرياض",
+    salary: "+20,000 ريال",
+    filter1: "طباخ",
+    filter2: "فاين دايننق",
+    cardOptions: {fixed: 0, highlight: false, showLogo: true},
+    timePosted: "2023-02-27T12:59-0500",
+    demoCard: false
+  },
+  {
+    jobTitle: "طباخ خبير",
+    companyName: "مطاعم ماكدونلدز",
+    companyLogo: "https://pbs.twimg.com/profile_images/1625792557291651073/GDxGcTsc_400x400.png",
+    location: "الرياض",
+    salary: null,
+    filter1: "طباخ",
+    filter2: "فاين دايننق",
+    cardOptions: {fixed: 0, highlight: false, showLogo: true},
+    timePosted: "2023-02-27T12:59-0500",
+    demoCard: false
   }
 ]
 function creatJobCard(element)
@@ -107,7 +115,7 @@ function creatJobCard(element)
       companyName={element.companyName}
       companyLogo={element.companyLogo}
       jobLocation={element.location}
-      jobSalary={element.salary}
+      jobSalary={element.salary !== null ? (element.salary):null}
       filter1={element.filter1}
       filter2={element.filter2}
       cardFixed={element.cardOptions.fixed}

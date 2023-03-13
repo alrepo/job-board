@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Select } from '../SearchBar/search-bar.styled';
 
 const salaryTo = [
-  '💰 يصل إلى',
+  '💰 يبدأ من',
   '1000 ريال',
   '2000 ريال',
   '3000 ريال',
@@ -36,9 +36,16 @@ const salaryTo = [
   'أكثر من 30000 ريال',
 ];
 
-function SalaryTo({ value, onChange }) {
+function SalaryTo(props) {
+  const [selectValue, setSelectValue] = useState("");
+
+  function updateSelectValue(e) {
+    setSelectValue(e.target.value);
+    props.onChange(e.target.value);
+  }
+
   return (
-    <Select style={{marginBottom: "1rem"}} name="SalaryTo" value={value} onChange={onChange}>
+    <Select style={{ marginBottom: "1rem" }} name="SalaryTo" onChange={updateSelectValue}>
       {salaryTo.map((salary) => (
         <option key={salary} value={salary}>
           {salary}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Select } from '../SearchBar/search-bar.styled';
 
 const cities = [
@@ -26,9 +26,15 @@ const cities = [
   'الجوف',
 ];
 
-function JobCity({ value, onChange }) {
+function JobCity(props) {
+  let [jobCity, setJobCity] = useState("");
+  function updateJobCity(e)
+  {
+    setJobCity(e.target.value);
+    props.onChange(e.target.value);
+  }
   return (
-    <Select style={{marginBottom: "1rem"}} name="JobCity" value={value} onChange={onChange}>
+    <Select style={{marginBottom: "1rem"}} name="JobCity" onChange={updateJobCity}>
       {cities.map((city) => (
         <option key={city} value={city}>
           {city}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Select } from '../SearchBar/search-bar.styled';
 
 const categories = [
@@ -23,9 +23,14 @@ const categories = [
   'تقنية',
 ];
 
-function CompanyCategory({ value, onChange }) {
-  return (
-    <Select style={{marginBottom: "1rem"}} name="CompanyCategory" value={value} onChange={onChange}>
+function CompanyCategory(props) {
+  let [companyCateg, setCompanyCateg] = useState("");
+  function updateCategory(e)
+  {
+    setCompanyCateg(e.target.value);
+    props.onChange(e.target.value);
+  }  return (
+    <Select style={{marginBottom: "1rem"}} name="CompanyCategory" onChange={updateCategory}>
       {categories.map((category) => (
         <option key={category} value={category}>
           {category}

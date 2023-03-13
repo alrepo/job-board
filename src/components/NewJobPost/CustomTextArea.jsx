@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const StyledTextArea = styled(TextareaAutosize)`
+  font-family: Tajawal, sans-serif;
   font-size: 14px;
   border: 2px solid #ccc;
   line-height: 1.3;

@@ -35,7 +35,7 @@ function JobCard(props) {
   }
 
   return (
-    <JobCardDiv dir="rtl" onClick={handleCardClick}>
+    <JobCardDiv dir="rtl" onClick={!props.demoCard ? handleCardClick:null}>
       <LogoTableColumn>
         {props.cardShowLogo ? (
           <CompanyLogo src={props.companyLogo} alt="Company Logo" />
@@ -68,14 +68,18 @@ function JobCard(props) {
         {props.filter2 !== null ? <Filter2>{props.filter2}</Filter2> : null}
       </FilterTags>
       <ApplyButtonTableColumn>
-        <ApplyButton onClick={handleButtonClick}>
+        <ApplyButton onClick={!props.demoCard ? handleButtonClick:null}>
           تقديم
         </ApplyButton>
       </ApplyButtonTableColumn>
       <TimePosted>
-        <Moment fromNow ago>
+      {!props.demoCard ?
+        (<Moment fromNow ago>
           {props.timePosted}
-        </Moment>
+        </Moment>)
+        :
+        (<span></span>)
+        }
       </TimePosted>
       {props.cardFixed > 0 ? (
         <Pin>
