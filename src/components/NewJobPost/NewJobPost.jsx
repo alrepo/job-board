@@ -105,9 +105,7 @@ function NewJobPost()
                 <Label> تصنيف مكان العمل :{"*"}</Label>
                 <CompanyCategory onChange={updateCompanyCategory}/>
                 <Label>كامل الراتب الشهري المتوقع:</Label>
-                <SalaryDiv>
                     <SalaryFrom onChange={updateSalaryValue}/>
-                </SalaryDiv>
                 <Label> ايميل استقبال المتقدمين:{"*"} </Label>
                 <ParentComponent name="companyEmail"></ParentComponent>
                 <Label>{"أو"} </Label>
