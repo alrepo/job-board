@@ -1,46 +1,66 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import Moment from 'react-moment';
 import 'moment/locale/ar';
+// import JobCard from "../JobCard/JobCard";
 
-function JobDetailsPage(props)
-{
-    return(
-        <div className="pageContainer">
-            <div className="companyCard">
-                <img className="pageCompanyLogo" src={props.companyImg}/>
-                <p className="pageCompanyName" >{props.companyName}</p>
-                <div className="stats" >
-                    <p className="viewsNumber" ></p>
-                    <p className="clicksNumber" ></p>
-                </div>
-                <div className="pageApplyButton" >Apply Now</div>
-            </div>
-            <div className="postDetails" >
-                <p className="pageJobTitle" >{props.jobTitle}</p>
-                <div className="timePosted"><Moment fromNow ago>{props.timePosted}</Moment></div>
-                <div className="aboutCompany">
-                    <div className="pageCompanyName">{props.companyName}<p> معلومات عن</p></div>
-                    <div className="companyDescription">{props.companyDescription}</div>
-                </div>
-                <div className="aboutJob" >
-                    <p> معلومات عن الوظيفة: </p>
-                    <div className="jobDescription" >{props.jobDescription}</div>
-                    <div className="jobTasks"></div>
-                </div>
-                <div className="aboutEmployee" >
-                    <p>معلومات عن الموظف: </p>
-                    <div className="employeeTasks" ></div>
-                    <div className="employeeQualifications" ></div>
-                </div>
-                <div className="aboutBenifits" >
-                    <p>التعويضات: </p>
-                    <div className="allBenifits" ></div>
-                </div>
-            </div>
-            <div className="pageApplyButton" >Apply Now</div>
-        </div>
-    )
-    
-}
+import {
+         JobPostContainer,
+         JobPostSection,
+         ApplyButton,
+         LogoDiv,
+         CompanyDescription,
+         Logo,
+         LogoAndTitleDiv,
+         CompanyName,
+         ButtonDiv,
+         PostList,
+
+        } from './job-detailes-page.styled';
+// import {
+//         LogoTableColumn,
+//         CompanyLogo
+// } from '../JobCard/job-card.styled';
+import { generateAvatar } from '../JobCard/avatar-generator';
+
+const JobDetailsPage = () => {
+    const { state } = useLocation();
+    const cardProps = state ? state.cardProps : null;
+
+  return (
+    <JobPostContainer>
+      <JobPostSection>
+        <h2 className="title">{" "}<span className="jobTitle">{"👨"}{cardProps.jobTitle}</span>{" "}<span className="companyName">{"🏢"}{cardProps.companyName}</span>{" "}<span className="jobLocation">{"🌏"}{cardProps.jobLocation}</span></h2>
+      </JobPostSection>
+      <JobPostSection>
+        <h2>تفاصيل الوظيفة</h2>
+        <PostList>
+          <li><strong>الوصف الوظيفي:</strong> A description of the job goes here.</li>
+          <li><strong>المدينة: </strong>{cardProps.jobLocation}</li>
+          <li><strong>تنصيف الوظيفة: </strong>{cardProps.jobCategory}</li>
+          <li><strong>تصنيف مكان العمل: </strong>{cardProps.companyCategory}</li>
+          <li><strong> الراتب يبدأ من: </strong>{cardProps.jobSalary}</li>
+        </PostList>
+      </JobPostSection>
+      <JobPostSection>
+      <LogoDiv>
+      <LogoAndTitleDiv>
+            {cardProps.cardShowLogo ? (
+            <Logo src={cardProps.companyLogo} alt="Company Logo" />
+            ) : (
+            <Logo src={generateAvatar(cardProps.companyName, 100)} alt="Company Logo" />
+            )}
+            <CompanyName>{cardProps.companyName}{" :"}</CompanyName>
+      </LogoAndTitleDiv>
+            <CompanyDescription>A 500-character paragraph about the company goes here.</CompanyDescription>
+      </LogoDiv>
+      </JobPostSection>
+      <ButtonDiv style={{display:"flex"}}>
+          <ApplyButton>تقدم الآن</ApplyButton>
+     </ButtonDiv>
+    </JobPostContainer>
+
+  );
+};
 
 export default JobDetailsPage;

@@ -2,6 +2,8 @@ import React from "react";
 import Moment from 'react-moment';
 import { useNavigate } from "react-router-dom";
 import 'moment/locale/ar';
+import { generateAvatar } from './avatar-generator';
+// import jobDetailsPage from "../JobDetailsPage/JobDetailsPage";
 import {
    JobCardDiv,
    LogoTableColumn,
@@ -19,7 +21,7 @@ import {
    Pin,
    ApplyButtonTableColumn,
    ApplyButton,
-
+   
    } from "./job-card.styled.js";
 
 function JobCard(props) {
@@ -27,12 +29,12 @@ function JobCard(props) {
 
   function handleButtonClick(event) {
     event.stopPropagation(); // Stop the event from propagating to the parent div
-    navigate('/jobs/id=12345/application');
+    navigate(`/jobs/${props.jobID}/application`);
   }
 
   function handleCardClick() {
-    navigate('/jobs/id=12345');
-  }
+    navigate(`/jobs/${props.jobID}`, { state: { cardProps: props } });
+    }
 
   return (
     <JobCardDiv dir="rtl" onClick={!props.demoCard ? handleCardClick:null}>
@@ -64,8 +66,8 @@ function JobCard(props) {
         </LocationAndSalaryContainer>
       </CompanyNameAndJobTitleContainer>
       <FilterTags>
-        <Filter1>{props.filter1}</Filter1>
-        {props.filter2 !== null ? <Filter2>{props.filter2}</Filter2> : null}
+        <Filter1>{props.jobCategory}</Filter1>
+        {props.companyCategory !== null ? <Filter2>{props.companyCategory}</Filter2> : null}
       </FilterTags>
       <ApplyButtonTableColumn>
         <ApplyButton onClick={!props.demoCard ? handleButtonClick:null}>
@@ -88,25 +90,6 @@ function JobCard(props) {
       ) : null}
     </JobCardDiv>
   );
-}
-// role="img" aria-label="emoji"
-function generateAvatar(username, size) {
-  const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d');
-  canvas.width = size;
-  canvas.height = size;
-  context.fillStyle = '#FFFFFF'; // Background color
-  context.fillRect(0, 0, size, size);
-  context.font = Math.floor(size / 2) + 'px Arial'; // Font size
-  context.textAlign = 'center';
-  context.textBaseline = 'middle';
-  context.fillStyle = '#FF0000'; // Text color
-  context.fillText(username.charAt(0).toUpperCase(), size / 2, size / 2);
-  // Draw a circle
-  context.beginPath();
-  context.arc(size / 2, size / 2, size / 2, 0, 2 * Math.PI);
-  return canvas.toDataURL();
-
 }
 
 export default JobCard;

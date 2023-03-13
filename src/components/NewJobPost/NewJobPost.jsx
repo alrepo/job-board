@@ -123,8 +123,8 @@ function NewJobPost()
                     companyLogo={""}
                     jobLocation={(jobLocationValue === "🌏 اختر مدينة") ? "مدينة العمل":jobLocationValue}
                     jobSalary={(salaryValue !== null && salaryValue !== "💰 يبدأ من") ? "+ "+salaryValue:null}
-                    filter1={(jobCategoryValue === "👨‍🍳 اختر تصنيف") ? "تصنيف الوظيف":jobCategoryValue}
-                    filter2={(companyCategoryValue === "🍴 اختر تصنيف") ? "تصنيف مكان العمل":companyCategoryValue}
+                    jobCategory={(jobCategoryValue === "👨‍🍳 اختر تصنيف") ? "تصنيف الوظيف":jobCategoryValue}
+                    companyCategory={(companyCategoryValue === "🍴 اختر تصنيف") ? "تصنيف مكان العمل":companyCategoryValue}
                     cardFixed={7}
                     cardHighlighted={true}
                     cardShowLogo={false}
