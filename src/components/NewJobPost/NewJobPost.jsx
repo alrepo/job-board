@@ -116,7 +116,7 @@ function NewJobPost()
 
             </InputDiv>
 
-            <InputDiv style={{marginTop: "2rem", paddingTop: "2rem"}}>
+            <InputDiv style={{marginTop: "2rem", paddingTop: "2rem", paddingLeft: "0", paddingRight: "0"}}>
             
             <Heading>معاينة الإعلان</Heading>
                 <JobCard 
