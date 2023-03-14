@@ -87,14 +87,14 @@ function NewJobPost()
     const props=
     {
         demoPageDetails: true,
-        jobTitle: jobTitleValue==="المسمى الوظيفي" ? "......":jobTitleValue,
-        companyName: companyNameValue==="اسم المنشأة"?"......":companyNameValue,
+        jobTitle: jobTitleValue==="المسمى الوظيفي" ? "(المسمى الوظيفي)":jobTitleValue,
+        companyName: companyNameValue==="اسم المنشأة"?"(اسم المنشأة)":companyNameValue,
         companyLogo: "https://alhamour.me/logo/AlhamorLogo.jpg",
-        companyDescription: companyDescriptionValue==="وصف المنشأة"?"......":companyDescriptionValue,
+        companyDescription: companyDescriptionValue==="وصف المنشأة"?"(وصف المنشأة.....)":companyDescriptionValue,
         jobDescription: jobDescriptionValue==="الوصف الوظيفي"?"......":jobDescriptionValue,
         emailToApply: emailToApplyValue,
         linkToApply: linkToApplyValue,
-        jobLocation: ((jobLocationValue === "🌏 اختر مدينة") || (jobLocationValue === "مدينة العمل")) ? "......" : jobLocationValue,
+        jobLocation: ((jobLocationValue === "🌏 اختر مدينة") || (jobLocationValue === "مدينة العمل")) ? "(المدينة)" : jobLocationValue,
         jobSalary: (salaryValue !== null && salaryValue !== "💰 يبدأ من") ? salaryValue : null,
         jobCategory: (jobCategoryValue === "👨‍🍳 اختر تصنيف" || jobCategoryValue === "تصنيف الوظيفة") ? "......" : jobCategoryValue,
         companyCategory: (companyCategoryValue === "🍴 اختر تصنيف" || companyCategoryValue ==="تصنيف مكان العمل") ? "......" : companyCategoryValue,
