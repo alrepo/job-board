@@ -8,9 +8,13 @@ import {
         InputDiv,
         Label,
         LogoDiv,
-        SalaryDiv,
 
 } from "./new-job-post.styled.js";
+// import {
+//         LogoTableColumn,
+//         CompanyLogo,
+//         CompanyNameAndJobTitleContainer,
+// } from "../JobCard/job-card.styled";
 // import { jobTitleValue } from './Input';
 import JobCard from '../JobCard/JobCard.jsx';
 import CustomTextArea from './CustomTextArea.jsx';
@@ -20,20 +24,41 @@ import JobCity from "./JobCity.jsx";
 import JobCategory from "./JobCategory.jsx";
 import CompanyCategory from "./CompanyCategory.jsx";
 import SalaryFrom from "./SalaryFrom.jsx";
-// import SalaryTo from "./SalaryTo.jsx";
+import DemoJobPostDetails from './DemoJobPostDetails';
 
 // import { remainingChars } from "./Input";
 
 function NewJobPost()
 {
+
     let [jobTitleValue, setJobTitleValue] = useState("المسمى الوظيفي");
     let [companyNameValue, setCompanyNameValue] = useState("اسم المنشأة");
     let [salaryValue, setSalaryValue] = useState(null);
     let [jobCategoryValue, setJobCategoryValue] = useState("تصنيف الوظيفة");
     let [companyCategoryValue, setCompanyCategoryValue] = useState("تصنيف مكان العمل");
     let [jobLocationValue, setJobLocationValue] = useState("مدينة العمل");
-    // let [salaryToValue, setSalaryToValue] = useState("");
+    let [companyDescriptionValue, setCompanyDescriptionValue] = useState("وصف المنشأة");
+    let [jobDescriptionValue, setJobDescriptionValue] = useState("الوصف الوظيفي");
+    let [emailToApplyValue, setEmailToApplyValue] = useState("البريد الإلكتروني");
+    let [linkToApplyValue, setLinkToApplyValue] = useState("الموقع الإلكتروني");
 
+    // let [salaryToValue, setSalaryToValue] = useState("");
+    function updateCompanyDescription(newCompanyDescription)
+    {
+        setCompanyDescriptionValue(newCompanyDescription);
+    }
+    function updateJobDescription(newJobDescription)
+    {
+        setJobDescriptionValue(newJobDescription);
+    }
+    function updateEmailToApply(newEmailToApply)
+    {
+        setEmailToApplyValue(newEmailToApply);
+    }
+    function updateLinkToApply(newLinkToApply)
+    {
+        setLinkToApplyValue(newLinkToApply);
+    }
     function updateJobTitle(newJobTitle)
     {
         setJobTitleValue(newJobTitle);
@@ -59,6 +84,26 @@ function NewJobPost()
     {
         setJobLocationValue(newJobLocation);
     }
+    const props=
+    {
+        demoPageDetails: true,
+        jobTitle: jobTitleValue==="المسمى الوظيفي" ? "......":jobTitleValue,
+        companyName: companyNameValue==="اسم المنشأة"?"......":companyNameValue,
+        companyLogo: "https://alhamour.me/logo/AlhamorLogo.jpg",
+        companyDescription: companyDescriptionValue==="وصف المنشأة"?"......":companyDescriptionValue,
+        jobDescription: jobDescriptionValue==="الوصف الوظيفي"?"......":jobDescriptionValue,
+        emailToApply: emailToApplyValue,
+        linkToApply: linkToApplyValue,
+        jobLocation: ((jobLocationValue === "🌏 اختر مدينة") || (jobLocationValue === "مدينة العمل")) ? "......" : jobLocationValue,
+        jobSalary: (salaryValue !== null && salaryValue !== "💰 يبدأ من") ? salaryValue : null,
+        jobCategory: (jobCategoryValue === "👨‍🍳 اختر تصنيف" || jobCategoryValue === "تصنيف الوظيفة") ? "......" : jobCategoryValue,
+        companyCategory: (companyCategoryValue === "🍴 اختر تصنيف" || companyCategoryValue ==="تصنيف مكان العمل") ? "......" : companyCategoryValue,
+        cardFixed: 7,
+        cardHighlighted: true,
+        cardShowLogo: true,
+        timePosted: "",
+        demoCard: true
+    }
     // function updateSalaryToValue(newSalaryToValue)
     // {
     //     setSalaryToValue(newSalaryToValue);
@@ -79,6 +124,7 @@ function NewJobPost()
                 <Label>وصف للمنشأة:{"*"} </Label>
                 <CustomTextArea
                     name="aboutCompany"
+                    onChange={updateCompanyDescription}
                     // ref={textareaRef}
                     placeholder="مثلا: 
                     نحن مطعم متخصص في المأكولات البحرية. لدينا خمسة فروع...الخ"
@@ -94,6 +140,7 @@ function NewJobPost()
                 <Label>الوصف الوظيفي:{"*"} </Label>
                 <CustomTextArea
                     name="jobDescription"
+                    onChange={updateJobDescription}
                     // ref={textareaRef}
                     placeholder="مثلا: 
                     يتولى مدير التشغيل في مطعمنا إدارة وتشغيل خمسة فروع...إلخ"
@@ -107,10 +154,10 @@ function NewJobPost()
                 <Label>كامل الراتب الشهري المتوقع:</Label>
                     <SalaryFrom onChange={updateSalaryValue}/>
                 <Label> ايميل استقبال المتقدمين:{"*"} </Label>
-                <ParentComponent name="companyEmail"></ParentComponent>
+                <ParentComponent name="companyEmail" onChange={updateEmailToApply}></ParentComponent>
                 <Label>{"أو"} </Label>
                 <Label> رابط التقديم (اذا لايوجد بريد إلكتروني):{"*"} </Label>
-                <ParentComponent name="companyURL"></ParentComponent>
+                <ParentComponent name="companyURL" onChange={updateLinkToApply}></ParentComponent>
 
             </InputDiv>
 
@@ -120,33 +167,23 @@ function NewJobPost()
                 <JobCard 
                     jobTitle={jobTitleValue}
                     companyName={companyNameValue}
-                    companyLogo={""}
+                    companyLogo={"https://alhamour.me/logo/AlhamorLogo.jpg"}
+                    companyDescription={companyDescriptionValue}
+                    jobDescription={jobDescriptionValue}
+                    emailToApply={emailToApplyValue}
+                    linkToApplyValue={linkToApplyValue}
                     jobLocation={(jobLocationValue === "🌏 اختر مدينة") ? "مدينة العمل":jobLocationValue}
                     jobSalary={(salaryValue !== null && salaryValue !== "💰 يبدأ من") ? "+ "+salaryValue:null}
                     jobCategory={(jobCategoryValue === "👨‍🍳 اختر تصنيف") ? "تصنيف الوظيف":jobCategoryValue}
                     companyCategory={(companyCategoryValue === "🍴 اختر تصنيف") ? "تصنيف مكان العمل":companyCategoryValue}
                     cardFixed={7}
                     cardHighlighted={true}
-                    cardShowLogo={false}
+                    cardShowLogo={true}
                     timePosted={""}
                     demoCard={true}
                 />
+                <DemoJobPostDetails cardProps={props} />
             </InputDiv>
-            {/* <PostDetails
-                companyLogo={"Logo"}
-                companyNamy={"Company Name"}
-                companyDescription={"Company Description"}
-                jobTitle={"Job Title"}
-                jobDescription={"Job Description"}
-                jobLocation={"Job Location"}
-                jobSalary={"salary"}
-                viewCount={"Views Count"}
-                clicksCount={"Clicks Count"}
-                timePosted={"Time Posted"}
-                applyEmail={"Apply Email"}
-                applyLink={"Apply Link"}
-                demoCard={true}
-           /> */}
         </div>
 
     )

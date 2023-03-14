@@ -20,7 +20,7 @@ function SearchBar() {
           <Select style={{marginTop: "0.5rem"}}>
             <option value="كل المناطق">
               <span role="img" aria-label="emoji">
-                🌏{" "}
+                {/* 🌏{" "} */}
               </span>
               كل المناطق
             </option>
@@ -33,7 +33,7 @@ function SearchBar() {
           <Select style={{marginTop: "0.5rem"}}>
             <option value="كل الفئات">
               <span role="img" aria-label="emoji">
-                🍴{" "}
+                {/* 🍴{" "} */}
               </span>
               كل الفئات
             </option>
@@ -46,7 +46,7 @@ function SearchBar() {
           <Select style={{marginTop: "0.5rem"}}>
             <option value="كل الوظائف">
               <span role="img" aria-label="emoji">
-                👨‍🍳{" "}
+                {/* 👨‍🍳{" "} */}
               </span>
               كل الوظائف
             </option>
@@ -57,7 +57,7 @@ function SearchBar() {
         </Filter>
         <SearchButton>
           <span role="img" aria-label="emoji">
-            🔎{" "}
+            {/* 🔎{" "} */}
           </span>
           بحث
         </SearchButton>

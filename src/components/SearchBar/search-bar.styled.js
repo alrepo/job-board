@@ -80,8 +80,7 @@ export const SearchButton = styled.div`
     padding: 8px 20px;
     font-size: 18px;
     font-weight: 600;
-    color: #fff;
-    background-color: red;
+    color: red;
     border-radius: 10px;
     border: solid 1px;
     border-color: red;

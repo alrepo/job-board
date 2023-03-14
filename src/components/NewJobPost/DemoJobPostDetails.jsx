@@ -17,18 +17,16 @@ import {
          PostList,
          Paragraph
 
-        } from './job-detailes-page.styled';
+        } from '../JobDetailsPage/job-detailes-page.styled';
 // import {
 //         LogoTableColumn,
 //         CompanyLogo
 // } from '../JobCard/job-card.styled';
 import { generateAvatar } from '../JobCard/avatar-generator';
 
-const JobDetailsPage = () => {
-    const { state } = useLocation();
-    const cardProps = state ? state.cardProps : null;
-
-  return (
+function DemoJobPostDetails(props){
+  const { cardProps } = props;
+    return (
     <JobPostContainer>
       <JobPostSection>
         <h2 className="title">{" "}<span className="jobTitle">{"👨"}{cardProps.jobTitle}</span>{" "}<span className="companyName">{"🏢"}{cardProps.companyName}</span>{" "}<span className="jobLocation">{"🌏"}{cardProps.jobLocation}</span></h2>
@@ -59,4 +57,4 @@ const JobDetailsPage = () => {
   );
 };
 
-export default JobDetailsPage;
+export default DemoJobPostDetails;
