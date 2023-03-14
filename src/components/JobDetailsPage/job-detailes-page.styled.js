@@ -2,17 +2,25 @@ import styled from "styled-components";
 
 export const JobPostContainer = styled.div`
   font-family: Tajawal, sans-serif;
+  border: 2px solid #ccc;
+  background-color: #f7f7f7;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease-in-out;
   direction: rtl;
-  max-width: 700px;
+  width: 75%;
   max-height: 100%;
   margin: 0 auto;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-  background-color: #ffffff;
-  border-radius: 20px;
-  
-  @media only screen and (max-width: 600px) {
-    padding: 1.875rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 5px;
+  @media only screen and (max-width: 730px) {
+    width: 100%;
+    box-sizing: border-box;
   }
 `;
 

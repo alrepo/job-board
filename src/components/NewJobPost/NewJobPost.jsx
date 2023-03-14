@@ -8,7 +8,7 @@ import {
         InputDiv,
         Label,
         LogoDiv,
-
+        Preview
 } from "./new-job-post.styled.js";
 // import {
 //         LogoTableColumn,
@@ -161,7 +161,7 @@ function NewJobPost()
 
             </InputDiv>
 
-            <InputDiv style={{marginTop: "2rem", paddingTop: "2rem", paddingLeft: "0", paddingRight: "0"}}>
+            <Preview style={{marginTop: "2rem", paddingTop: "2rem", paddingLeft: "0", paddingRight: "0"}}>
             
             <Heading>معاينة الإعلان</Heading>
                 <JobCard 
@@ -183,7 +183,7 @@ function NewJobPost()
                     demoCard={true}
                 />
                 <DemoJobPostDetails cardProps={props} />
-            </InputDiv>
+            </Preview>
         </div>
 
     )

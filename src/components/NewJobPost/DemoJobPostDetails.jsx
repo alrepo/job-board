@@ -50,7 +50,7 @@ function DemoJobPostDetails(props){
             <CompanyName>{cardProps.companyName}{" :"}<CompanyDescription>{cardProps.companyDescription}</CompanyDescription></CompanyName>
       </LogoAndTitleDiv>
     <ButtonDiv style={{display:"flex"}}>
-      <ApplyButton>تقدم الآن</ApplyButton>
+      <ApplyButton style={{backgroundColor: "grey", cursor: "default"}}>تقدم الآن</ApplyButton>
      </ButtonDiv>
     </JobPostContainer>
 
