@@ -14,6 +14,7 @@ function App() {
       <Route exact path="/jobs/:id" element={<JobDetailsPage />} />
       <Route exact path="/jobs/:id/application" element={<JobApplication />} />
       <Route exact path="/jobs/new-job-post" element={<NewJobPost />} />
+      <Route exact path="/jobs/publish" element={<Jobs />} />
     </Routes>
   );
 }

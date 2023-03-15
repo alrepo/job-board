@@ -163,6 +163,28 @@ export const ApplyButton = styled.button`
     padding: 10px 20px;
   }
 `
+export const SubmitPostButton = styled.button`
+  font-family: Tajawal, sans-serif;
+  background-color: rgb(249, 50, 50);
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: red;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+`
 export const ButtonDiv = styled.div`
 display: flex;
 margin-top: 1.5rem;

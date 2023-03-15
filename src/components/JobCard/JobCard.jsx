@@ -70,7 +70,19 @@ function JobCard(props) {
         {props.companyCategory !== null ? <Filter2>{props.companyCategory}</Filter2> : null}
       </FilterTags>
       <ApplyButtonTableColumn>
-        <ApplyButton onClick={!props.demoCard ? handleButtonClick:null}>
+      <ApplyButton 
+        style={
+                props.demoCard 
+                  ? { 
+                      visibility: "visible", 
+                      cursor: "default", 
+                      backgroundColor: "lightGrey",
+                      border: "none", // add this line to remove focus styling
+                      color: "white",
+                    }
+                  : null
+              } 
+        onClick={!props.demoCard ? handleButtonClick:null}>
           تقديم
         </ApplyButton>
       </ApplyButtonTableColumn>

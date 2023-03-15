@@ -1,15 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { 
-        Heading,
-        InputDiv,
-        Label,
-        LogoDiv,
-        Preview
+import {
+    Heading,
+    InputDiv,
+    Label,
+    LogoDiv,
+    Preview
 } from "./new-job-post.styled.js";
+import {
+    ButtonDiv,
+    SubmitPostButton
+}
+    from '../JobDetailsPage/job-detailes-page.styled';
 // import {
 //         LogoTableColumn,
 //         CompanyLogo,
@@ -25,102 +31,126 @@ import JobCategory from "./JobCategory.jsx";
 import CompanyCategory from "./CompanyCategory.jsx";
 import SalaryFrom from "./SalaryFrom.jsx";
 import DemoJobPostDetails from './DemoJobPostDetails';
+import axios from "axios";
 
 // import { remainingChars } from "./Input";
 
-function NewJobPost()
-{
+function NewJobPost() {
 
-    let [jobTitleValue, setJobTitleValue] = useState("المسمى الوظيفي");
-    let [companyNameValue, setCompanyNameValue] = useState("اسم المنشأة");
-    let [salaryValue, setSalaryValue] = useState(null);
-    let [jobCategoryValue, setJobCategoryValue] = useState("تصنيف الوظيفة");
-    let [companyCategoryValue, setCompanyCategoryValue] = useState("تصنيف مكان العمل");
-    let [jobLocationValue, setJobLocationValue] = useState("مدينة العمل");
-    let [companyDescriptionValue, setCompanyDescriptionValue] = useState("وصف المنشأة");
-    let [jobDescriptionValue, setJobDescriptionValue] = useState("الوصف الوظيفي");
-    let [emailToApplyValue, setEmailToApplyValue] = useState("البريد الإلكتروني");
-    let [linkToApplyValue, setLinkToApplyValue] = useState("الموقع الإلكتروني");
+    const [jobTitleValue, setJobTitleValue] = useState("المسمى الوظيفي");
+    const [companyNameValue, setCompanyNameValue] = useState("اسم المنشأة");
+    const [salaryValue, setSalaryValue] = useState(null);
+    const [jobCategoryValue, setJobCategoryValue] = useState("تصنيف الوظيفة");
+    const [companyCategoryValue, setCompanyCategoryValue] = useState("تصنيف مكان العمل");
+    const [jobLocationValue, setJobLocationValue] = useState("مدينة العمل");
+    const [companyDescriptionValue, setCompanyDescriptionValue] = useState("وصف المنشأة");
+    const [jobDescriptionValue, setJobDescriptionValue] = useState("الوصف الوظيفي");
+    const [emailToApplyValue, setEmailToApplyValue] = useState("البريد الإلكتروني");
+    const [linkToApplyValue, setLinkToApplyValue] = useState("الموقع الإلكتروني");
+    const [logoPath, setLogoPath] = useState(null); // state for logo path
 
-    // let [salaryToValue, setSalaryToValue] = useState("");
-    function updateCompanyDescription(newCompanyDescription)
-    {
+    // const [salaryToValue, setSalaryToValue] = useState("");
+    function updateCompanyDescription(newCompanyDescription) {
         setCompanyDescriptionValue(newCompanyDescription);
     }
-    function updateJobDescription(newJobDescription)
-    {
+    function updateJobDescription(newJobDescription) {
         setJobDescriptionValue(newJobDescription);
     }
-    function updateEmailToApply(newEmailToApply)
-    {
+    function updateEmailToApply(newEmailToApply) {
         setEmailToApplyValue(newEmailToApply);
     }
-    function updateLinkToApply(newLinkToApply)
-    {
+    function updateLinkToApply(newLinkToApply) {
         setLinkToApplyValue(newLinkToApply);
     }
-    function updateJobTitle(newJobTitle)
-    {
+    function updateJobTitle(newJobTitle) {
         setJobTitleValue(newJobTitle);
     }
-    function updateCompanyName(newCompanyName)
-    {
+    function updateCompanyName(newCompanyName) {
         setCompanyNameValue(newCompanyName);
     }
-    function updateSalaryValue(newSalaryValue)
-    {
+    function updateSalaryValue(newSalaryValue) {
         setSalaryValue(newSalaryValue);
         console.log(newSalaryValue.selectedIndex);
     }
-    function updateJobCategory(newJobCategory)
-    {
+    function updateJobCategory(newJobCategory) {
         setJobCategoryValue(newJobCategory);
     }
-    function updateCompanyCategory(newCompanyCategory)
-    {
+    function updateCompanyCategory(newCompanyCategory) {
         setCompanyCategoryValue(newCompanyCategory);
     }
-    function updateJobLocation(newJobLocation)
-    {
+    function updateJobLocation(newJobLocation) {
         setJobLocationValue(newJobLocation);
     }
-    const props=
+      // function to handle logo path change
+    function handleLogoChange(path) {
+        setLogoPath(path);
+    }
+    const props =
     {
         demoPageDetails: true,
-        jobTitle: jobTitleValue==="المسمى الوظيفي" ? "(المسمى الوظيفي)":jobTitleValue,
-        companyName: companyNameValue==="اسم المنشأة"?"(اسم المنشأة)":companyNameValue,
+        jobTitle: jobTitleValue === "المسمى الوظيفي" ? "(المسمى الوظيفي)" : jobTitleValue,
+        companyName: companyNameValue === "اسم المنشأة" ? "(اسم المنشأة)" : companyNameValue,
         companyLogo: "https://alhamour.me/logo/AlhamorLogo.jpg",
-        companyDescription: companyDescriptionValue==="وصف المنشأة"?"(وصف المنشأة.....)":companyDescriptionValue,
-        jobDescription: jobDescriptionValue==="الوصف الوظيفي"?"......":jobDescriptionValue,
+        companyDescription: companyDescriptionValue === "وصف المنشأة" ? "(وصف المنشأة.....)" : companyDescriptionValue,
+        jobDescription: jobDescriptionValue === "الوصف الوظيفي" ? "......" : jobDescriptionValue,
         emailToApply: emailToApplyValue,
         linkToApply: linkToApplyValue,
         jobLocation: ((jobLocationValue === "🌏 اختر مدينة") || (jobLocationValue === "مدينة العمل")) ? "(المدينة)" : jobLocationValue,
         jobSalary: (salaryValue !== null && salaryValue !== "💰 يبدأ من") ? salaryValue : null,
         jobCategory: (jobCategoryValue === "👨‍🍳 اختر تصنيف" || jobCategoryValue === "تصنيف الوظيفة") ? "......" : jobCategoryValue,
-        companyCategory: (companyCategoryValue === "🍴 اختر تصنيف" || companyCategoryValue ==="تصنيف مكان العمل") ? "......" : companyCategoryValue,
+        companyCategory: (companyCategoryValue === "🍴 اختر تصنيف" || companyCategoryValue === "تصنيف مكان العمل") ? "......" : companyCategoryValue,
         cardFixed: 7,
         cardHighlighted: true,
         cardShowLogo: true,
         timePosted: "",
         demoCard: true
     }
+    const navigate = useNavigate();
+
     // function updateSalaryToValue(newSalaryToValue)
     // {
     //     setSalaryToValue(newSalaryToValue);
     // }
-    return(
+    function handleSubmit(event) 
+    {
+        event.preventDefault();
+        const data = {
+            jobTitle: jobTitleValue,
+            companyName: companyNameValue,
+            salaryValue: salaryValue,
+            jobCategory: jobCategoryValue,
+            companyCategory: companyCategoryValue,
+            jobLocation: jobLocationValue,
+            companyDescription: companyDescriptionValue,
+            jobDescription: jobDescriptionValue,
+            emailToApply: emailToApplyValue,
+            linkToApply: linkToApplyValue,
+            // logoPath: logoPath // include logo path in the request body
+        };
+        // make post request with the data
+        axios.post('http://localhost:5000/api/new-post', data)
+        .then(response => {
+          console.log('Post request successful!', response);
+          navigate('/jobs'); // change the URL to the new URL here
+        })
+        .catch(error => {
+          console.error('Error submitting post request:', error);
+        });
+    }
+    return (
+        <form onSubmit={handleSubmit} action="http://localhost:5000/api/new-post">
         <div>
-            <InputDiv style={{marginTop: "2rem", paddingTop: "2rem"}}>
-            <Heading>عن جهة التوظيف</Heading>
+            <InputDiv style={{ marginTop: "2rem", paddingTop: "2rem" }}>
+                <Heading>عن جهة التوظيف</Heading>
 
                 <Label> اسم المنشأة:{"*"} </Label>
                 <ParentComponent name="companyName" onChange={updateCompanyName}></ParentComponent>
-                
+
                 <LogoDiv>
-                <Label>شعار المنشأة (بصيغة PNG أو JPG)</Label>
-                    <LogoUploader />
+                    <Label>شعار المنشأة (بصيغة PNG أو JPG)</Label>
+                    <LogoUploader onChange={handleLogoChange}/>
                 </LogoDiv>
-                
+
                 <Label>وصف للمنشأة:{"*"} </Label>
                 <CustomTextArea
                     name="aboutCompany"
@@ -131,12 +161,12 @@ function NewJobPost()
                 />
             </InputDiv>
 
-            <InputDiv style={{marginTop: "2rem", paddingTop: "2rem"}}>
-            <Heading>عن الوظيفة</Heading>
+            <InputDiv style={{ marginTop: "2rem", paddingTop: "2rem" }}>
+                <Heading>عن الوظيفة</Heading>
 
                 <Label> المسمى الوظيفي :{"*"}</Label>
                 <ParentComponent name="jobTitle" onChange={updateJobTitle}></ParentComponent>
-                               
+
                 <Label>الوصف الوظيفي:{"*"} </Label>
                 <CustomTextArea
                     name="jobDescription"
@@ -146,13 +176,13 @@ function NewJobPost()
                     يتولى مدير التشغيل في مطعمنا إدارة وتشغيل خمسة فروع...إلخ"
                 />
                 <Label>مدينة العمل :{"*"}</Label>
-                <JobCity onChange={updateJobLocation}/>
+                <JobCity onChange={updateJobLocation} />
                 <Label> تصنيف الوظيفة :{"*"}</Label>
-                <JobCategory onChange={updateJobCategory}/>
+                <JobCategory onChange={updateJobCategory} />
                 <Label> تصنيف مكان العمل :{"*"}</Label>
-                <CompanyCategory onChange={updateCompanyCategory}/>
+                <CompanyCategory onChange={updateCompanyCategory} />
                 <Label>كامل الراتب الشهري المتوقع:</Label>
-                    <SalaryFrom onChange={updateSalaryValue}/>
+                <SalaryFrom onChange={updateSalaryValue} />
                 <Label> ايميل استقبال المتقدمين:{"*"} </Label>
                 <ParentComponent name="companyEmail" onChange={updateEmailToApply}></ParentComponent>
                 <Label>{"أو"} </Label>
@@ -161,10 +191,10 @@ function NewJobPost()
 
             </InputDiv>
 
-            <Preview style={{marginTop: "2rem", paddingTop: "2rem", paddingLeft: "0", paddingRight: "0"}}>
-            
-            <Heading>معاينة الإعلان</Heading>
-                <JobCard 
+            <Preview style={{ marginTop: "2rem", paddingTop: "2rem", paddingLeft: "0", paddingRight: "0" }}>
+
+                <Heading>معاينة الإعلان</Heading>
+                <JobCard
                     jobTitle={jobTitleValue}
                     companyName={companyNameValue}
                     companyLogo={"https://alhamour.me/logo/AlhamorLogo.jpg"}
@@ -172,10 +202,10 @@ function NewJobPost()
                     jobDescription={jobDescriptionValue}
                     emailToApply={emailToApplyValue}
                     linkToApplyValue={linkToApplyValue}
-                    jobLocation={(jobLocationValue === "🌏 اختر مدينة") ? "مدينة العمل":jobLocationValue}
-                    jobSalary={(salaryValue !== null && salaryValue !== "💰 يبدأ من") ? "+ "+salaryValue:null}
-                    jobCategory={(jobCategoryValue === "👨‍🍳 اختر تصنيف") ? "تصنيف الوظيف":jobCategoryValue}
-                    companyCategory={(companyCategoryValue === "🍴 اختر تصنيف") ? "تصنيف مكان العمل":companyCategoryValue}
+                    jobLocation={(jobLocationValue === "🌏 اختر مدينة") ? "مدينة العمل" : jobLocationValue}
+                    jobSalary={(salaryValue !== null && salaryValue !== "💰 يبدأ من") ? "+ " + salaryValue : null}
+                    jobCategory={(jobCategoryValue === "👨‍🍳 اختر تصنيف") ? "تصنيف الوظيف" : jobCategoryValue}
+                    companyCategory={(companyCategoryValue === "🍴 اختر تصنيف") ? "تصنيف مكان العمل" : companyCategoryValue}
                     cardFixed={7}
                     cardHighlighted={true}
                     cardShowLogo={true}
@@ -183,9 +213,12 @@ function NewJobPost()
                     demoCard={true}
                 />
                 <DemoJobPostDetails cardProps={props} />
+                <ButtonDiv style={{ display: "flex" }}>
+                    <SubmitPostButton type="submit">أنشر الإعلان الآن</SubmitPostButton>
+                </ButtonDiv>
             </Preview>
         </div>
-
+    </form>
     )
 }
 
