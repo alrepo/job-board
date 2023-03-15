@@ -95,7 +95,7 @@ export const JobCardDiv = styled.div`
     cursor: pointer;
     box-shadow: #ccc;
     box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2); /* Set the box-shadow */
-    transition: box-shadow 0.3s ease; Add a transition effect to the box-shadow
+    transition: box-shadow 0.3s ease; /* Add a transition effect to the box-shadow */
 
     &:hover ${ApplyButton}
     {
