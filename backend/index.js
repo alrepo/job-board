@@ -26,7 +26,7 @@ const JobsSchema = {
     emailToApply: String,
     linkToApply: String,
     location: String,
-    salary: Number,
+    salary: String,
     jobCategory: String,
     companyCategory: String,
     cardOptions: {
@@ -34,15 +34,16 @@ const JobsSchema = {
       highlight: Boolean,
       showLogo: Boolean
     },
+    timePosted: String,
     demoCard: Boolean
   };
-const JobPost = mongoose.model("JobPost", JobsSchema);
+const CompanyPosts = mongoose.model("CompanyPosts", JobsSchema);
 
 app.post('/api/new-post', (req, res) => {
-  const jobPost = new JobPost(req.body);
-  jobPost.save()
+  const company = new CompanyPosts(JSON.parse(Object.keys(req.body)[0]));
+  company.save()
   .then(() => {
-    console.log(req.body);
+    console.log(Object.keys(req.body)[0]);
     res.send('db updated successfully!');
   })
   .catch(err => {
@@ -52,11 +53,25 @@ app.post('/api/new-post', (req, res) => {
   
 });
 
-app.get('/jobs/publish-post', (req, res) => {
-  res.send('Hello from the server!');
+
+app.get('/api/jobs', async (req,res) => {
+  try {
+    const result = await CompanyPosts.find();
+    res.send(result);
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error retrieving data from database');
+  }
 });
 
-const port = process.env.PORT || 5000;
+
+
+// app.get('/jobs/publish-post', (req, res) => {
+//   res.send('Hello from the server!');
+// });
+
+const port = process.env.PORT || 5001;
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });

@@ -123,7 +123,7 @@ function NewJobPost() {
             jobID: generateRandomNumber(),
             jobTitle: jobTitleValue,
             companyName: companyNameValue,
-            companyLogo: "logo-link",//To be updated by logo path
+            companyLogo: "https://pbs.twimg.com/profile_images/1493729525288505347/SagwcuRN_400x400.jpg",//To be updated by logo path
             companyDescription: companyDescriptionValue,
             jobDescription: jobDescriptionValue,
             emailToApply: emailToApplyValue,
@@ -137,12 +137,12 @@ function NewJobPost() {
                 highlight: false,//default value for now
                 showLogo: true//default value for now
               },
-            timePosted: (new Date().getDate).toString,
+            timePosted: new Date().getDate,
             demoCard: false
             // logoPath: logoPath // include logo path in the request body
         };
         // make post request with the data
-        axios.post('http://localhost:5000/api/new-post', JSON.stringify(data))
+        axios.post('http://localhost:5001/api/new-post', JSON.stringify(data))
             .then(response => {
                 console.log('Post request successful!', response);
                 navigate('/jobs'); // change the URL to the new URL here
@@ -152,7 +152,7 @@ function NewJobPost() {
             });
     }
     return (
-        <form onSubmit={handleSubmit} action="http://localhost:5000/api/new-post">
+        <form onSubmit={handleSubmit} action="http://localhost:5001/api/new-post">
             <div>
                 <InputDiv style={{ marginTop: "2rem", paddingTop: "2rem" }}>
                     <Heading>عن جهة التوظيف</Heading>
