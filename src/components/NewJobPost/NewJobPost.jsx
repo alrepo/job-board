@@ -145,7 +145,8 @@ function NewJobPost() {
         axios.post('http://localhost:5001/api/new-post', JSON.stringify(data))
             .then(response => {
                 console.log('Post request successful!', response);
-                navigate('/jobs'); // change the URL to the new URL here
+                // navigate('/jobs'); // change the URL to the new URL here
+                window.location.href = '/jobs';
             })
             .catch(error => {
                 console.error('Error submitting post request:', error);
