@@ -9,7 +9,6 @@ import {
   
  } from "./jobs-page.styled.js";
  import axios from "axios";
- import { jobss } from './jobs';
 
 function creatJobCard(element)
 {

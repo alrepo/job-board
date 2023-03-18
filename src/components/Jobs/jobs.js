@@ -1,4 +1,4 @@
-export const jobss = [
+export const jobPosts = [
        {
          jobID: "12345",
          jobTitle: "طباخ خبير",
