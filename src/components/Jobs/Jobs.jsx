@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import JobCard from "../JobCard/JobCard.jsx";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import { useNavigate } from "react-router-dom";
+import { jobPosts } from './jobs';
 import { 
   PostButton,
   PostButtonContainer,
@@ -36,18 +37,19 @@ function creatJobCard(element)
 
 function Jobs() {
   const navigate = useNavigate();
-  const [jobs, setJobs] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://localhost:5002/api/jobs')
-      .then(response => {
-        console.log(response.data);
-        setJobs(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
+  // const [jobs, setJobs] = useState([]);
+  // setJobs(jobPosts);
+  let jobs = jobPosts;
+  // useEffect(() => {
+  //   axios.get('http://localhost:5002/api/jobs')
+  //     .then(response => {
+  //       console.log(response.data);
+  //       setJobs(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+  // }, []);
 
   return(
     <div>
