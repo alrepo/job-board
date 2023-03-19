@@ -251,7 +251,7 @@ function NewJobPost() {
                     />
                     <DemoJobPostDetails cardProps={props} />
                     <ButtonDiv style={{ display: "flex" }}>
-                        <SubmitPostButton type="submit">أنشر الإعلان الآن</SubmitPostButton>
+                        <SubmitPostButton type="submit" value="Submit">أنشر الإعلان الآن</SubmitPostButton>
                     </ButtonDiv>
                 </Preview>
             </div>

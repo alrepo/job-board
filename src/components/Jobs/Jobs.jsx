@@ -38,7 +38,6 @@ function creatJobCard(element)
 function Jobs() {
   const navigate = useNavigate();
   // const [jobs, setJobs] = useState([]);
-  // setJobs(jobPosts);
   let jobs = jobPosts;
   // useEffect(() => {
   //   axios.get('http://localhost:5002/api/jobs')
