@@ -44,7 +44,7 @@ function SalaryFrom(props) {
   }
 
   return (
-    <Select style={{ marginBottom: "1rem" }} name="SalaryFrom" onChange={updateSelectValue}>
+    <Select style={{ marginBottom: "1rem" }} name="SalaryFrom" onChange={updateSelectValue} value={selectValue} submitClicked={props.submitClicked}>
       {salaryFrom.map((salary) => (
         <option key={salary} value={salary}>
           {salary}

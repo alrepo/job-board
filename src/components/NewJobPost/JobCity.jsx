@@ -34,7 +34,7 @@ function JobCity(props) {
     props.onChange(e.target.value);
   }
   return (
-    <Select style={{marginBottom: "1rem"}} name="JobCity" onChange={updateJobCity}>
+    <Select style={{marginBottom: "1rem"}} name="JobCity" onChange={updateJobCity} value={jobCity} submitClicked={props.submitClicked}>
       {cities.map((city) => (
         <option key={city} value={city}>
           {city}

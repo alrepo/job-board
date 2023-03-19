@@ -25,7 +25,7 @@ let [jobCateg, setJobCateg] = useState("");
     props.onChange(e.target.value);
   }
   return (
-    <Select style={{marginBottom: "1rem"}} name="JobCategory" onChange={updateCategory}>
+    <Select style={{marginBottom: "1rem"}} name="JobCategory" onChange={updateCategory} value={jobCateg} submitClicked={props.submitClicked}>
       {categories.map((category) => (
         <option key={category} value={category}>
           {category}

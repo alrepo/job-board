@@ -30,7 +30,7 @@ function CompanyCategory(props) {
     setCompanyCateg(e.target.value);
     props.onChange(e.target.value);
   }  return (
-    <Select style={{marginBottom: "1rem"}} name="CompanyCategory" onChange={updateCategory}>
+    <Select style={{marginBottom: "1rem"}} name="CompanyCategory" onChange={updateCategory} value={companyCateg} submitClicked={props.submitClicked}>
       {categories.map((category) => (
         <option key={category} value={category}>
           {category}

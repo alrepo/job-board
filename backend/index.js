@@ -58,7 +58,6 @@ app.get('/api/jobs', async (req,res) => {
   try {
     const result = await CompanyPosts.find();
     res.send(result);
-    console.log(result);
   } catch (error) {
     console.error(error);
     res.status(500).send('Error retrieving data from database');
@@ -71,7 +70,7 @@ app.get('/api/jobs', async (req,res) => {
 //   res.send('Hello from the server!');
 // });
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5002;
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });

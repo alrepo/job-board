@@ -4,29 +4,6 @@ import styled from 'styled-components';
 let MAX_LENGTH = 0;
 let jobTitleValue = "";
 
-function Input({ name, value, setValue, ...props }) {
-  const remainingChars = MAX_LENGTH - value.length;
-  const handleChange = event => {
-    const value = event.target.value;
-    if (value.length <= MAX_LENGTH) {
-      setValue(value);
-      props.onChange(value);
-    }
-  };
-
-  return (
-    <Wrapper>
-      <InputField
-        {...props}
-        name={name}
-        value={value}
-        onChange={handleChange}
-      />
-      <RemainingChars>{remainingChars}</RemainingChars>
-    </Wrapper>
-  );
-}
-
 function ParentComponent(props) {
   const [value, setValue] = useState('');
 
@@ -46,12 +23,39 @@ function ParentComponent(props) {
   }
   return (
     <>
-      <Input name={props.name} value={value} setValue={setValue} onChange={updateValue}/>
+      <Input name={props.name} value={value} setValue={setValue} onChange={updateValue} submitClicked={props.submitClicked}/>
       <AnotherComponent remainingChars={MAX_LENGTH - value.length} />
     </>
   );
 }
-
+function Input({ name, value, setValue, submitClicked, ...props }) {  const remainingChars = MAX_LENGTH - value.length;
+  const handleChange = event => {
+    const value = event.target.value;
+    if (value.length <= MAX_LENGTH) {
+      setValue(value);
+      props.onChange(value);
+    }
+  };
+  return (
+    <Wrapper>
+      <InputField
+        {...props}
+        name={name}
+        value={value}
+        onChange={handleChange}
+        style={{
+          boxShadow:
+            submitClicked && value.trim() === ""
+              ? "0 0 2px 2px red"
+              : value.trim() === ""
+              ? "0 0 2px 2px #4799e"
+              : null,
+        }}
+        />
+      <RemainingChars>{remainingChars}</RemainingChars>
+    </Wrapper>
+  );
+}
 function AnotherComponent({ remainingChars }) {
   // use the latest value of remainingChars as needed
   return (

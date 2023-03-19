@@ -21,9 +21,17 @@ const StyledTextArea = styled(TextareaAutosize)`
   resize: none;
   background: #faf8f8;
   &:focus {
-    box-shadow: 0 0 2px 2px #4799eb;
+    box-shadow: ${({ submitClicked, value }) => (!submitClicked 
+    ? "0 0 2px 2px #4799eb":submitClicked && value.trim() === "" 
+    ? "0 0 2px 2px red":(submitClicked && value.trim() !== "") ? "0 0 2px 2px #4799eb" :null)};
     outline: 0;
   }
+  box-shadow: ${({ submitClicked, value }) => (submitClicked && value.trim() === "" 
+    ? "0 0 2px 2px red" 
+    : value.trim() === ""
+    ? "0 0 2px 2px #4799e"
+    : null)};
+
   ::placeholder {
     color: #BEBEBE;
   }
@@ -59,6 +67,7 @@ function CustomTextArea(props) {
     <div style={{position: "relative", display: "grid"}}>
       <StyledTextArea
         {...props}
+        submitClicked={props.submitClicked}
         value={value}
         onChange={handleChange}
       />

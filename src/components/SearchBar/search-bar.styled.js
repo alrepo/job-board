@@ -60,10 +60,20 @@ export const Select = styled.select`
     || (props.name === 'SalaryFrom') || (props.name === 'SalaryTo')
     || (props.name === 'CompanyCategory') ? '40%': null)
     };
-    &:focus {
-    box-shadow: 0 0 2px 2px #4799eb;
-    outline: #4799eb;
+  &:focus {
+    box-shadow: ${({ submitClicked, value }) => (!submitClicked 
+    ? "0 0 2px 2px #4799eb":(submitClicked && value === "" || (submitClicked && (value === "💰 يبدأ من"
+    || value === "👨‍🍳 اختر تصنيف" || value === "🍴 اختر تصنيف" || value === "🌏 اختر مدينة")))
+    ? "0 0 2px 2px red":(submitClicked && value !== "" && value !== "💰 يبدأ من"
+     && value !== "👨‍🍳 اختر تصنيف" && value !== "🍴 اختر تصنيف" && value !== "🌏 اختر مدينة") ? "0 0 2px 2px #4799eb" :null)};
+    outline: 0;
   }
+  box-shadow: ${({ submitClicked, value }) => ((submitClicked && (value === "" || value === "💰 يبدأ من"
+    || value === "👨‍🍳 اختر تصنيف" || value === "🍴 اختر تصنيف" || value === "🌏 اختر مدينة")) 
+    ? "0 0 2px 2px red" 
+    : (!submitClicked)
+    ? "0 0 2px 2px #4799e"
+    : null)};
     @media only screen and (max-width: 630.04px) 
     {
         width: 100%;

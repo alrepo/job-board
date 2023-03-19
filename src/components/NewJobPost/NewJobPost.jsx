@@ -32,6 +32,7 @@ import CompanyCategory from "./CompanyCategory.jsx";
 import SalaryFrom from "./SalaryFrom.jsx";
 import DemoJobPostDetails from './DemoJobPostDetails';
 import axios from "axios";
+import { NoEncryption } from "@mui/icons-material";
 
 // import { remainingChars } from "./Input";
 
@@ -108,9 +109,10 @@ function NewJobPost() {
         cardFixed: 7,
         cardHighlighted: true,
         cardShowLogo: true,
-        demoCard: true
+        demoCard: true,
     }
     const navigate = useNavigate();
+    const [submitClicked, setSubmitClicked] = useState(false);
 
     // function updateSalaryToValue(newSalaryToValue)
     // {
@@ -118,7 +120,7 @@ function NewJobPost() {
     // }
     function handleSubmit(event) {
         event.preventDefault();
-       
+
         const data = {
             jobID: generateRandomNumber(),
             jobTitle: jobTitleValue,
@@ -135,14 +137,25 @@ function NewJobPost() {
             cardOptions: {
                 fixed: 0,//default value for now
                 highlight: false,//default value for now
-                showLogo: true//default value for now
+                showLogo: false//default value for now
               },
             timePosted: new Date().getDate,
             demoCard: false
             // logoPath: logoPath // include logo path in the request body
         };
+        // if(companyNameValue == "اسم المنشأة")
+        // {
+        //     alert("No Company Name was Entered!")
+        // }
         // make post request with the data
-        axios.post('http://localhost:5001/api/new-post', JSON.stringify(data))
+        setSubmitClicked(true); // set submitClicked to true when submit button is clicked
+        if(companyNameValue == "اسم المنشأة" || linkToApplyValue=="الموقع الإلكتروني" || 
+        jobTitleValue=="المسمى الوظيفي" || emailToApplyValue == "البريد الإلكتروني")
+        {
+
+        }
+        else{
+            axios.post('http://localhost:5001/api/new-post', JSON.stringify(data))
             .then(response => {
                 console.log('Post request successful!', response);
                 navigate('/jobs'); // change the URL to the new URL here
@@ -150,7 +163,15 @@ function NewJobPost() {
             .catch(error => {
                 console.error('Error submitting post request:', error);
             });
+        }
+
+
     }
+    // let redHighlight1={
+    //     ':focus': {
+    //     boxShadow: "0 0 2px 2px #FF0000"
+    //     },
+    // };
     return (
         <form onSubmit={handleSubmit} action="http://localhost:5001/api/new-post">
             <div>
@@ -158,7 +179,7 @@ function NewJobPost() {
                     <Heading>عن جهة التوظيف</Heading>
 
                     <Label> اسم المنشأة:{"*"} </Label>
-                    <ParentComponent name="companyName" onChange={updateCompanyName}></ParentComponent>
+                    <ParentComponent name="companyName" onChange={updateCompanyName} submitClicked={submitClicked}></ParentComponent>
 
                     <LogoDiv>
                         <Label>شعار المنشأة (بصيغة PNG أو JPG)</Label>
@@ -169,6 +190,7 @@ function NewJobPost() {
                     <CustomTextArea
                         name="aboutCompany"
                         onChange={updateCompanyDescription}
+                        submitClicked={submitClicked}
                         // ref={textareaRef}
                         placeholder="مثلا: 
                     نحن مطعم متخصص في المأكولات البحرية. لدينا خمسة فروع...الخ"
@@ -179,29 +201,30 @@ function NewJobPost() {
                     <Heading>عن الوظيفة</Heading>
 
                     <Label> المسمى الوظيفي :{"*"}</Label>
-                    <ParentComponent name="jobTitle" onChange={updateJobTitle}></ParentComponent>
+                    <ParentComponent name="jobTitle" onChange={updateJobTitle} submitClicked={submitClicked}></ParentComponent>
 
                     <Label>الوصف الوظيفي:{"*"} </Label>
                     <CustomTextArea
                         name="jobDescription"
                         onChange={updateJobDescription}
+                        submitClicked={submitClicked}
                         // ref={textareaRef}
                         placeholder="مثلا: 
                     يتولى مدير التشغيل في مطعمنا إدارة وتشغيل خمسة فروع...إلخ"
                     />
                     <Label>مدينة العمل :{"*"}</Label>
-                    <JobCity onChange={updateJobLocation} />
+                    <JobCity onChange={updateJobLocation} submitClicked={submitClicked}/>
                     <Label> تصنيف الوظيفة :{"*"}</Label>
-                    <JobCategory onChange={updateJobCategory} />
+                    <JobCategory onChange={updateJobCategory} submitClicked={submitClicked}/>
                     <Label> تصنيف مكان العمل :{"*"}</Label>
-                    <CompanyCategory onChange={updateCompanyCategory} />
+                    <CompanyCategory onChange={updateCompanyCategory} submitClicked={submitClicked}/>
                     <Label>كامل الراتب الشهري المتوقع:</Label>
-                    <SalaryFrom onChange={updateSalaryValue} />
+                    <SalaryFrom onChange={updateSalaryValue} submitClicked={submitClicked}/>
                     <Label> ايميل استقبال المتقدمين:{"*"} </Label>
-                    <ParentComponent name="companyEmail" onChange={updateEmailToApply}></ParentComponent>
+                    <ParentComponent name="companyEmail" onChange={updateEmailToApply} submitClicked={submitClicked}></ParentComponent>
                     <Label>{"أو"} </Label>
                     <Label> رابط التقديم (اذا لايوجد بريد إلكتروني):{"*"} </Label>
-                    <ParentComponent name="companyURL" onChange={updateLinkToApply}></ParentComponent>
+                    <ParentComponent name="companyURL" onChange={updateLinkToApply} submitClicked={submitClicked}></ParentComponent>
 
                 </InputDiv>
 
