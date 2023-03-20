@@ -132,7 +132,20 @@ export const Preview = styled.div`
         font-size: 25vw;; /* set the font size */
     }
 }
-
+@media only screen and (max-width: 870px) 
+{
+    ::before
+    {
+        font-size: 30vw;; /* set the font size */
+    }
+}
+@media only screen and (max-width: 740px) 
+{
+    ::before
+    {
+        font-size: 35vw;; /* set the font size */
+    }
+}
 /* END preview text adjusting @media queries */
 
 @media only screen and (max-width: 730.49px) 
