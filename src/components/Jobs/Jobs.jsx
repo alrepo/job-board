@@ -38,7 +38,7 @@ function creatJobCard(element)
 function Jobs() {
   const navigate = useNavigate();
   // const [jobs, setJobs] = useState([]);
-  setJobs(jobPosts);
+  // setJobs(jobPosts);
   // useEffect(() => {
   //   axios.get('http://localhost:5002/api/jobs')
   //     .then(response => {
@@ -49,7 +49,7 @@ function Jobs() {
   //       console.error(error);
   //     });
   // }, []);
-
+let jobs = jobPosts;
   return(
     <div>
       <PostButtonContainer><PostButton onClick={()=>{navigate('/jobs/new-job-post')}}>أنشر إعلان وظيفي</PostButton></PostButtonContainer>
