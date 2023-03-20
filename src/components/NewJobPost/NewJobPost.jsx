@@ -162,6 +162,7 @@ function NewJobPost() {
             .catch(error => {
                 console.error('Error submitting post request:', error);
             });
+        }
 
 
     }
