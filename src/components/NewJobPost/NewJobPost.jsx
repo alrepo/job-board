@@ -119,8 +119,8 @@ function NewJobPost() {
     //     setSalaryToValue(newSalaryToValue);
     // }
     function handleSubmit(event) {
-        event.preventDefault();
-
+        // event.preventDefault();
+        
         const data = {
             jobID: generateRandomNumber(),
             jobTitle: jobTitleValue,
@@ -173,7 +173,6 @@ function NewJobPost() {
     //     },
     // };
     return (
-        <form onSubmit={handleSubmit} action="http://localhost:5001/api/new-post">
             <div>
                 <InputDiv style={{ marginTop: "2rem", paddingTop: "2rem" }}>
                     <Heading>عن جهة التوظيف</Heading>
@@ -251,11 +250,10 @@ function NewJobPost() {
                     />
                     <DemoJobPostDetails cardProps={props} />
                     <ButtonDiv style={{ display: "flex" }}>
-                        <SubmitPostButton type="submit" value="Submit">أنشر الإعلان الآن</SubmitPostButton>
+                        <SubmitPostButton type="button" value="submitButton" onClick={handleSubmit}>أنشر الإعلان الآن</SubmitPostButton>
                     </ButtonDiv>
                 </Preview>
             </div>
-        </form>
     )
 }
 
