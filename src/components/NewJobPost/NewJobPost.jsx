@@ -171,7 +171,7 @@ function NewJobPost() {
     //     },
     // };
     return (
-            <div  style={{textAlign: "center"}}>
+            <div style={{textAlign: "center"}}>
                 <InputDiv style={{ marginTop: "2rem", paddingTop: "2rem" }}>
                     <Heading>عن جهة التوظيف</Heading>
 
