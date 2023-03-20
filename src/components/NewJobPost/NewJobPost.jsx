@@ -149,12 +149,7 @@ function NewJobPost() {
         // }
         // make post request with the data
         setSubmitClicked(true); // set submitClicked to true when submit button is clicked
-        if(companyNameValue == "اسم المنشأة" || linkToApplyValue=="الموقع الإلكتروني" || 
-        jobTitleValue=="المسمى الوظيفي" || emailToApplyValue == "البريد الإلكتروني")
-        {
 
-        }
-        else{
             axios.post('http://localhost:5001/api/new-post', JSON.stringify(data))
             .then(response => {
                 console.log('Post request successful!', response);
@@ -163,7 +158,7 @@ function NewJobPost() {
             .catch(error => {
                 console.error('Error submitting post request:', error);
             });
-        }
+        
 
 
     }
