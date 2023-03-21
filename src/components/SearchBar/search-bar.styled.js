@@ -61,18 +61,17 @@ export const Select = styled.select`
     || (props.name === 'CompanyCategory') ? '40%': null)
     };
   &:focus {
-    box-shadow: ${({ submitClicked, value }) => (!submitClicked 
-    ? "0 0 2px 2px #4799eb":(submitClicked && value === "" || (submitClicked && (value === "💰 يبدأ من"
+    outline: ${({ submitClicked, value }) => (!submitClicked 
+    ? "#4799eb solid 3px":(submitClicked && value === "" || (submitClicked && (value === "💰 يبدأ من"
     || value === "👨‍🍳 اختر تصنيف" || value === "🍴 اختر تصنيف" || value === "🌏 اختر مدينة")))
-    ? "0 0 2px 2px red":(submitClicked && value !== "" && value !== "💰 يبدأ من"
-     && value !== "👨‍🍳 اختر تصنيف" && value !== "🍴 اختر تصنيف" && value !== "🌏 اختر مدينة") ? "0 0 2px 2px #4799eb" :null)};
-    outline: 0;
+    ? "red solid 3px":(submitClicked && value !== "" && value !== "💰 يبدأ من"
+     && value !== "👨‍🍳 اختر تصنيف" && value !== "🍴 اختر تصنيف" && value !== "🌏 اختر مدينة") ? "#4799eb solid 3px" :null)};
   }
-  box-shadow: ${({ submitClicked, value }) => ((submitClicked && (value === "" || value === "💰 يبدأ من"
+    outline: ${({ submitClicked, value }) => ((submitClicked && (value === "" || value === "💰 يبدأ من"
     || value === "👨‍🍳 اختر تصنيف" || value === "🍴 اختر تصنيف" || value === "🌏 اختر مدينة")) 
-    ? "0 0 2px 2px red" 
+    ? "red solid 3px" 
     : (!submitClicked)
-    ? "0 0 2px 2px #4799e"
+    ? "#4799e solid 3px"
     : null)};
     @media only screen and (max-width: 630.04px) 
     {

@@ -21,16 +21,15 @@ const StyledTextArea = styled(TextareaAutosize)`
   resize: none;
   background: #faf8f8;
   &:focus {
-    box-shadow: ${({ submitClicked, value }) => (!submitClicked 
-    ? "0 0 2px 2px #4799eb":submitClicked && value.trim() === "" 
-    ? "0 0 2px 2px red":(submitClicked && value.trim() !== "") ? "0 0 2px 2px #4799eb" :null)};
-    outline: 0;
+    outline: ${({ submitClicked, value }) => (!submitClicked 
+    ? "#4799eb solid 3px":submitClicked && value.trim() === "" 
+    ? "red solid 3px":(submitClicked && value.trim() !== "") ? "#4799eb solid 3px" :null)};
   }
-  box-shadow: ${({ submitClicked, value }) => (submitClicked && value.trim() === "" 
-    ? "0 0 2px 2px red" 
+  outline: ${({ submitClicked, value }) => (submitClicked && value.trim() === "" 
+    ? "red solid 3px" 
     : value.trim() === ""
-    ? "0 0 2px 2px #4799e"
-    : null)};
+    ? "#4799e solid 3px"
+      : null)};
 
   ::placeholder {
     color: #BEBEBE;
