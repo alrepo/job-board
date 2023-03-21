@@ -149,13 +149,21 @@ function NewJobPost() {
         // }
         // make post request with the data
         setSubmitClicked(true); // set submitClicked to true when submit button is clicked
-        // if(companyNameValue == "اسم المنشأة" || linkToApplyValue=="الموقع الإلكتروني" || 
-        // jobTitleValue=="المسمى الوظيفي" || emailToApplyValue == "البريد الإلكتروني")
-        // {
+        if(companyNameValue == "اسم المنشأة" || linkToApplyValue=="الموقع الإلكتروني" || 
+        jobTitleValue=="المسمى الوظيفي" || emailToApplyValue == "البريد الإلكتروني")
+        {
 
-        // }
-        navigate('/jobs'); // change the URL to the new URL here
-
+        }
+        else{
+            axios.post('http://localhost:5001/api/new-post', JSON.stringify(data))
+            .then(response => {
+                console.log('Post request successful!', response);
+                navigate('/jobs'); // change the URL to the new URL here
+            })
+            .catch(error => {
+                console.error('Error submitting post request:', error);
+            });
+        }
 
 
     }
