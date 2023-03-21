@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Moment from 'react-moment';
 import 'moment/locale/ar';
 // import JobCard from "../JobCard/JobCard";
@@ -27,11 +27,16 @@ import { generateAvatar } from '../JobCard/avatar-generator';
 const JobDetailsPage = () => {
     const { state } = useLocation();
     const cardProps = state ? state.cardProps : null;
+    const navigate = useNavigate();
 
   return (
     <JobPostContainer>
       <JobPostSection>
-        <h2 className="title">{" "}<span className="jobTitle">{"👨"}{cardProps.jobTitle}</span>{" "}<span className="companyName">{"🏢"}{cardProps.companyName}</span>{" "}<span className="jobLocation">{"🌏"}{cardProps.jobLocation}</span></h2>
+        <div className="title">
+          <p className="jobTitle">{cardProps.jobTitle}</p>
+          <p className="companyName">{cardProps.companyName}</p>
+          <p className="jobLocation">{cardProps.jobLocation}</p>
+        </div> 
       </JobPostSection>
       <JobPostSection>
         {/* <h3>تفاصيل الوظيفة</h3> */}
@@ -52,7 +57,7 @@ const JobDetailsPage = () => {
             <CompanyName>{cardProps.companyName}{" :"}<CompanyDescription>{cardProps.companyDescription}</CompanyDescription></CompanyName>
       </LogoAndTitleDiv>
     <ButtonDiv style={{display:"flex"}}>
-      <ApplyButton>تقدم الآن</ApplyButton>
+      <ApplyButton onClick={navigate(`/jobs/${cardProps.props.jobID}/application`)}>تقدم الآن</ApplyButton>
      </ButtonDiv>
     </JobPostContainer>
 

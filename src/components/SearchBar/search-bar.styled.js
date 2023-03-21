@@ -62,17 +62,20 @@ export const Select = styled.select`
     };
   &:focus {
     outline: ${({ submitClicked, value }) => (!submitClicked 
-    ? "#4799eb solid 3px":(submitClicked && value === "" || (submitClicked && (value === "💰 يبدأ من"
-    || value === "👨‍🍳 اختر تصنيف" || value === "🍴 اختر تصنيف" || value === "🌏 اختر مدينة")))
-    ? "red solid 3px":(submitClicked && value !== "" && value !== "💰 يبدأ من"
-     && value !== "👨‍🍳 اختر تصنيف" && value !== "🍴 اختر تصنيف" && value !== "🌏 اختر مدينة") ? "#4799eb solid 3px" :null)};
+    ? "#4799eb solid 3px":(submitClicked && value === ""
+    || (submitClicked && (value === "👨‍🍳 اختر تصنيف" 
+    || value === "🍴 اختر تصنيف" || value === "🌏 اختر مدينة")))
+    ? "red solid 3px":(submitClicked && (value !== "" 
+    && value !== "👨‍🍳 اختر تصنيف" && value !== "🍴 اختر تصنيف" 
+    && value !== "🌏 اختر مدينة")) ? "#4799eb solid 3px" :null)};
   }
-    outline: ${({ submitClicked, value }) => ((submitClicked && (value === "" || value === "💰 يبدأ من"
+    outline: ${({ submitClicked, value }) => ((submitClicked && 
+    (value === ""
     || value === "👨‍🍳 اختر تصنيف" || value === "🍴 اختر تصنيف" || value === "🌏 اختر مدينة")) 
     ? "red solid 3px" 
     : (!submitClicked)
-    ? "#4799e solid 3px"
-    : null)};
+    && null)};
+    
     @media only screen and (max-width: 630.04px) 
     {
         width: 100%;

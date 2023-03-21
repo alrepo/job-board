@@ -3,7 +3,7 @@ export const jobPosts = [
          jobID: "12345",
          jobTitle: "طباخ خبير",
          companyName: "مطاعم ماكدونلدز",
-         companyLogo: "https:pbs.twimg.com/profile_images/1625792557291651073/GDxGcTsc_400x400.png",
+         companyLogo: "https://1000logos.net/wp-content/uploads/2017/03/McDonalds-logo-640x360.png",
          companyDescription: "مطاعم ماكدونالدز هي أفضل مطاعم في العالم وتم تأسيس أول فرع في عام 1952 م",
          jobDescription: "في وظيفة الطباخ الخبير، نتوقع من الموظف أن يساعد في عمليات الطبخ بالإضافة إلى عمليات شراء المواد الأولية للمطبخ",
          emailToApply: "mcdonalds@gmail.com",

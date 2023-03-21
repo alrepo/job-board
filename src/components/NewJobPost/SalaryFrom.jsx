@@ -35,8 +35,20 @@ const salaryFrom = [
   '30000 ريال',
 ];
 
+const styles = {
+  salary: {
+    outline: 'none',
+    borderBottom: '1px solid #ccc'
+  },
+  salaryFocused: {
+    outline: '#4799eb 3px solid',
+    borderBottom: '1px solid #ccc'
+  }
+};
+
 function SalaryFrom(props) {
-  const [selectValue, setSelectValue] = useState("");
+  const [selectValue, setSelectValue] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
 
   function updateSelectValue(e) {
     setSelectValue(e.target.value);
@@ -44,7 +56,16 @@ function SalaryFrom(props) {
   }
 
   return (
-    <Select style={{ marginBottom: "1rem" }} name="SalaryFrom" onChange={updateSelectValue} value={selectValue} submitClicked={props.submitClicked}>
+    <Select
+      className="salary"
+      style={isFocused ? styles.salaryFocused : styles.salary}
+      name="SalaryFrom"
+      onChange={updateSelectValue}
+      value={selectValue}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}
+      submitClicked={props.submitClicked}
+    >
       {salaryFrom.map((salary) => (
         <option key={salary} value={salary}>
           {salary}

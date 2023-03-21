@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import Moment from 'react-moment';
 import 'moment/locale/ar';
 // import JobCard from "../JobCard/JobCard";
@@ -29,7 +29,11 @@ function DemoJobPostDetails(props){
     return (
     <JobPostContainer>
       <JobPostSection>
-        <h2 className="title">{" "}<span className="jobTitle">{"👨"}{cardProps.jobTitle}</span>{" "}<span className="companyName">{"🏢"}{cardProps.companyName}</span>{" "}<span className="jobLocation">{"🌏"}{cardProps.jobLocation}</span></h2>
+        <div className="title">
+        <p className="jobTitle">{cardProps.jobTitle}</p>
+        <p className="companyName">{cardProps.companyName}</p>
+        <p className="jobLocation">{cardProps.jobLocation}</p>
+        </div>
       </JobPostSection>
       <JobPostSection>
         {/* <h3>تفاصيل الوظيفة</h3> */}

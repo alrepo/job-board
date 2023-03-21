@@ -25,7 +25,7 @@ export const JobPostContainer = styled.div`
 `;
 
 export const JobPostSection = styled.div`
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   
   h2 {
     font-size: 2rem;
@@ -36,23 +36,23 @@ export const JobPostSection = styled.div`
   .jobTitle {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 0.25rem;
+    margin: 0;
   }
   
   .companyName {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 0.25rem;
+    margin: 0;
   }
   
   .jobLocation {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 0.25rem;
+    margin: 0;
   }
   
   p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1.5;
     color: #666;
   }
@@ -138,7 +138,7 @@ export const CompanyName = styled.span`
 `
 export const CompanyDescription = styled.p`
 margin: 0;
-font-size: 1.125rem;
+font-size: 1rem;
 font-weight: 400;
 `
 export const ApplyButton = styled.button`

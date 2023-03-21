@@ -150,7 +150,9 @@ function NewJobPost() {
         // make post request with the data
         setSubmitClicked(true); // set submitClicked to true when submit button is clicked
         if(companyNameValue == "اسم المنشأة" || linkToApplyValue=="الموقع الإلكتروني" || 
-        jobTitleValue=="المسمى الوظيفي" || emailToApplyValue == "البريد الإلكتروني")
+        jobTitleValue=="المسمى الوظيفي" || emailToApplyValue == "البريد الإلكتروني" || 
+        jobCategoryValue == "تصنيف الوظيفة" || companyCategoryValue=="تصنيف مكان العمل" ||
+         jobLocationValue == "مدينة العمل")
         {
 
         }
@@ -250,7 +252,7 @@ function NewJobPost() {
                     />
                     <DemoJobPostDetails cardProps={props} />
                     <ButtonDiv style={{ display: "flex" }}>
-                        <SubmitPostButton type="button" value="submitButton" onClick={handleSubmit}>أنشر الإعلان الآن</SubmitPostButton>
+                        <SubmitPostButton type="button" value="applyButton" onClick={handleSubmit}>أنشر الإعلان الآن</SubmitPostButton>
                     </ButtonDiv>
                 </Preview>
             </div>
