@@ -57,7 +57,7 @@ const JobDetailsPage = () => {
             <CompanyName>{cardProps.companyName}{" :"}<CompanyDescription>{cardProps.companyDescription}</CompanyDescription></CompanyName>
       </LogoAndTitleDiv>
     <ButtonDiv style={{display:"flex"}}>
-      <ApplyButton onClick={navigate(`/jobs/${cardProps.props.jobID}/application`)}>تقدم الآن</ApplyButton>
+      <ApplyButton onClick={()=>{navigate(`/jobs/${cardProps.jobID}/application`)}}>تقدم الآن</ApplyButton>
      </ButtonDiv>
     </JobPostContainer>
 
