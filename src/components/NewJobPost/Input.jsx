@@ -44,12 +44,9 @@ function Input({ name, value, setValue, submitClicked, ...props }) {  const rema
         value={value}
         onChange={handleChange}
         style={{
-          boxShadow:
-            submitClicked && value.trim() === ""
-              ? "0 0 2px 2px red"
-              : value.trim() === ""
-              ? "0 0 2px 2px #4799e"
-              : null,
+          
+          outline: (submitClicked && value.trim() === ""
+              ? "yellow solid 3px" : value.trim() === "" ? "solid 3px #4799e":null)
         }}
         />
       <RemainingChars>{remainingChars}</RemainingChars>
